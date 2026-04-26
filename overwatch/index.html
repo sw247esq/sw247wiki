@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Overwatch Hero Guide 2026</title>
+<title>Overwatch Hero Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -23,15 +23,14 @@
   --ult-bg:#1e1630;--ult-border:#5040a0;--ult-text:#c0b0f0;
 }
 body{font-family:'Barlow',sans-serif;font-size:14px;line-height:1.6;color:var(--text);background:var(--bg);min-height:100vh}
-.site-header{background:linear-gradient(135deg,#0a0a10,#141428);border-bottom:1px solid var(--border);padding:20px 24px 16px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-.site-header h1{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#fff;line-height:1}
-.site-header h1 span{color:var(--accent)}
-.site-header p{font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:.5px;text-transform:uppercase}
-.header-pills{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
-.pill{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;padding:4px 10px;border-radius:4px;border:1px solid}
-.pill-tank{color:var(--tank);border-color:var(--tank);background:rgba(59,158,222,.1)}
-.pill-dps{color:var(--dps);border-color:var(--dps);background:rgba(222,59,59,.1)}
-.pill-sup{color:var(--sup);border-color:var(--sup);background:rgba(59,222,138,.1)}
+.site-header{background:linear-gradient(135deg,#0a0a10,#141428);border-bottom:1px solid var(--border);padding:20px 24px 16px;display:flex;align-items:center;gap:16px}
+.logo-mark{font-family:'Inter',sans-serif;font-size:24px;font-weight:800;letter-spacing:-0.5px;color:#fff;line-height:1}
+.logo-mark span{color:#d4a853}
+.logo-divider{width:1px;height:20px;background:var(--border2);flex-shrink:0}
+.logo-subtitle{font-family:'DM Mono',monospace;font-size:11px;font-weight:400;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.logo-patch{font-family:'DM Mono',monospace;font-size:10px;color:var(--faint);letter-spacing:1px;text-transform:uppercase;margin-left:16px;padding-left:16px;border-left:1px solid var(--border2)}
+.logo-back{font-family:'DM Mono',monospace;font-size:10px;color:var(--faint);letter-spacing:1px;text-transform:uppercase;text-decoration:none;margin-left:auto;opacity:.7}
+.logo-back:hover{opacity:1;color:var(--muted)}
 .controls{position:sticky;top:0;z-index:50;background:rgba(20,20,24,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:stretch}
 .role-tabs{display:flex;flex:1}
 .role-tab{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:14px 22px;cursor:pointer;border:none;background:none;color:var(--muted);border-bottom:3px solid transparent;transition:color .15s,border-color .15s}
@@ -61,26 +60,59 @@ body{font-family:'Barlow',sans-serif;font-size:14px;line-height:1.6;color:var(--
 .hero-meta{flex:1;min-width:0}
 .hero-name-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .hero-name{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;letter-spacing:.5px;color:#fff;line-height:1}
-.new-badge{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;background:rgba(166,127,234,.2);color:var(--new);border:1px solid var(--new);padding:2px 6px;border-radius:3px}
+.new-badge{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;background:rgba(245,166,35,.2);color:#f5a623;border:1px solid #f5a623;padding:2px 6px;border-radius:3px}
+.pick-high{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;background:rgba(80,200,130,.15);color:#50c882;border:1px solid rgba(80,200,130,.3);padding:2px 6px;border-radius:3px}
+.pick-low{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;background:rgba(200,80,80,.15);color:#c86060;border:1px solid rgba(200,80,80,.3);padding:2px 6px;border-radius:3px}
 .hero-sub-row{display:flex;align-items:center;gap:6px;margin-top:5px;flex-wrap:wrap}
 .flag-img{width:20px;height:14px;object-fit:cover;border-radius:2px;border:1px solid var(--border2);flex-shrink:0}
+.flag-emoji{font-size:16px;line-height:1;flex-shrink:0}
 .hero-nat{font-size:12px;color:var(--muted)}
 .hero-season{font-size:11px;color:var(--faint);margin-left:auto;white-space:nowrap}
-.role-badge{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:2px 7px;border-radius:3px}
+.role-badge{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:2px 7px;border-radius:3px;position:relative;cursor:default}
 .rb-tank{background:var(--tank-dim);color:var(--tank)}.rb-dps{background:var(--dps-dim);color:var(--dps)}.rb-sup{background:var(--sup-dim);color:var(--sup)}
-.subrole-badge{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:2px 7px;border-radius:3px;background:rgba(255,255,255,.06);color:var(--muted)}
-.hero-overview{font-style:italic;font-size:13px;color:var(--muted);padding:10px 16px;border-bottom:1px solid var(--border);line-height:1.5}
+.subrole-badge{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:2px 7px;border-radius:3px;position:relative;cursor:default}
+/* subrole colors */
+.sr-initiator{background:rgba(59,158,222,.15);color:#5bb8f0;border:1px solid rgba(59,158,222,.3)}
+.sr-bruiser{background:rgba(222,90,59,.15);color:#f07055;border:1px solid rgba(222,90,59,.3)}
+.sr-stalwart{background:rgba(100,180,100,.15);color:#7ecf7e;border:1px solid rgba(100,180,100,.3)}
+.sr-flanker{background:rgba(220,80,180,.15);color:#e070d0;border:1px solid rgba(220,80,180,.3)}
+.sr-recon{background:rgba(140,100,220,.15);color:#b090e8;border:1px solid rgba(140,100,220,.3)}
+.sr-sharpshooter{background:rgba(220,180,50,.15);color:#d4b840;border:1px solid rgba(220,180,50,.3)}
+.sr-specialist{background:rgba(200,140,60,.15);color:#d4a050;border:1px solid rgba(200,140,60,.3)}
+.sr-medic{background:rgba(59,222,138,.15);color:#50d898;border:1px solid rgba(59,222,138,.3)}
+.sr-survivor{background:rgba(80,200,200,.15);color:#60d0d0;border:1px solid rgba(80,200,200,.3)}
+.sr-tactician{background:rgba(180,130,220,.15);color:#c0a0e0;border:1px solid rgba(180,130,220,.3)}
+/* tooltip */
+.has-tooltip{position:relative}
+.has-tooltip .tooltip{display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#1e1e2a;border:1px solid var(--border2);border-radius:6px;padding:8px 10px;font-family:'Barlow',sans-serif;font-size:11px;color:#c8c8e0;line-height:1.5;width:220px;z-index:100;pointer-events:none;white-space:normal;text-align:left;font-weight:400;letter-spacing:0;text-transform:none}
+.has-tooltip:hover .tooltip{display:block}
+/* hp bar */
+.hp-bar-wrap{display:flex;align-items:center;gap:6px;margin-top:7px}
+.hp-bar{flex:1;height:6px;border-radius:3px;overflow:hidden;display:flex;background:rgba(255,255,255,.05)}
+.hp-seg-health{background:#e05070}
+.hp-seg-armor{background:#f5a623}
+.hp-seg-shield{background:#5bc8f0}
+.hp-total{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;color:var(--muted);white-space:nowrap}
+.hp-legend{display:flex;gap:8px;margin-top:3px;flex-wrap:wrap}
+.hp-legend-item{font-family:'Barlow Condensed',sans-serif;font-size:10px;display:flex;align-items:center;gap:3px}
+.hp-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.hero-overview{font-style:italic;font-size:13px;color:#b0b0c8;padding:10px 16px;border-bottom:1px solid var(--border);line-height:1.5}
+.ability-desc{font-size:12px;color:#a8a8c0;line-height:1.45;margin-top:1px}
 .card-tabs{display:flex;border-bottom:1px solid var(--border);background:var(--bg)}
 .card-tab{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:8px 0;cursor:pointer;border:none;background:none;color:var(--faint);border-bottom:2px solid transparent;transition:color .15s,border-color .15s;flex:1}
 .card-tab:hover{color:var(--muted)}.card-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .card-panel{display:none;padding:12px 16px 14px}.card-panel.active{display:block}
 .ability-list{display:flex;flex-direction:column;gap:8px}
 .ability-row{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:start}
-.ability-key{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.4px;background:rgba(255,255,255,.06);color:var(--muted);border-radius:4px;padding:3px 4px;text-align:center;line-height:1.3;border:1px solid var(--border2);margin-top:2px;word-break:break-all}
+.ability-key{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.4px;background:rgba(255,255,255,.06);color:var(--muted);border-radius:4px;padding:3px 4px;text-align:center;line-height:1.3;border:1px solid var(--border2);margin-top:2px;word-break:break-all}
 .ability-row.is-ult .ability-key{background:var(--ult-bg);border-color:var(--ult-border);color:var(--ult-text)}
 .ability-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--text);letter-spacing:.3px}
 .ability-row.is-ult .ability-name{color:var(--ult-text)}
-.ability-desc{font-size:12px;color:var(--muted);line-height:1.45;margin-top:1px}
+.ability-stats{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px}
+.ability-stat{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:.4px;padding:2px 7px;border-radius:3px}
+.as-dmg{background:rgba(222,80,80,.15);color:#e08080;border:1px solid rgba(222,80,80,.25)}
+.as-heal{background:rgba(80,200,130,.15);color:#70c898;border:1px solid rgba(80,200,130,.25)}
+.as-cd{background:rgba(180,180,220,.1);color:#9898bb;border:1px solid rgba(180,180,220,.2)}
 .ult-voices{margin-top:7px;display:flex;flex-direction:column;gap:4px}
 .voice-line{font-size:11.5px;padding:5px 9px;border-radius:4px;border-left:2px solid;line-height:1.4}
 .voice-ally{background:rgba(59,158,222,.1);border-color:var(--tank)}
@@ -109,15 +141,11 @@ footer{text-align:center;font-size:11px;color:var(--faint);padding:24px;border-t
 </head>
 <body>
 <header class="site-header">
-  <div>
-    <h1>Overwatch<span>.</span>GG Guide</h1>
-    <p>Abilities · Perks · Voice Lines · Strengths &amp; Counters · All 50 Heroes · April 2026</p>
-  </div>
-  <div class="header-pills">
-    <span class="pill pill-tank">14 Tanks</span>
-    <span class="pill pill-dps">22 Damage</span>
-    <span class="pill pill-sup">14 Support</span>
-  </div>
+  <div class="logo-mark">SW<span>247</span></div>
+  <div class="logo-divider"></div>
+  <div class="logo-subtitle">Overwatch Hero Guide</div>
+  <div class="logo-patch">v1.0 · Current as of patch: April 17, 2026</div>
+  <a class="logo-back" href="../index.html">← All Wikis</a>
 </header>
 <div class="controls">
   <div class="role-tabs">
@@ -129,7 +157,7 @@ footer{text-align:center;font-size:11px;color:var(--faint);padding:24px;border-t
 </div>
 <p class="no-results" id="no-results">No heroes match your search.</p>
 <div class="section visible" id="sec-tank"><div class="section-heading">Tanks — 14 heroes</div><div class="hero-grid" id="g-tank"></div></div>
-<div class="section" id="sec-dps"><div class="section-heading">Damage — 22 heroes</div><div class="hero-grid" id="g-dps"></div></div>
+<div class="section" id="sec-dps"><div class="section-heading">Damage — 23 heroes</div><div class="hero-grid" id="g-dps"></div></div>
 <div class="section" id="sec-sup"><div class="section-heading">Support — 14 heroes</div><div class="hero-grid" id="g-sup"></div></div>
 <footer>Overwatch Hero Guide · All 50 Heroes · April 2026 · Abilities · Perks · Voice Lines · Strengths &amp; Counters</footer>
 
@@ -147,9 +175,9 @@ ov:"A mech-piloting former pro-gamer who dives backlines, absorbs projectile ult
 ab:[
 {k:'LMB',n:'Fusion Cannons',d:'Automatic short-range spread weapons with no ammo limit. Devastating up close; severe damage falloff at range.'},
 {k:'LMB (Pilot)',n:'Light Gun',d:'Pilot-form automatic pistol. Reliable at medium range with unlimited ammo.'},
-{k:'Shift',n:'Boosters',d:'Fly in any direction at speed, ramming and damaging enemies on collision.'},
-{k:'RMB',n:'Defense Matrix',d:'Consume a resource bar to delete all incoming projectiles — including most ultimates — in a cone in front of D.Va.'},
-{k:'E',n:'Micro Missiles',d:'Fire a volley of explosive rockets. Can be used simultaneously with other abilities for combo burst damage.'},
+{k:'Shift',n:'Boosters',d:'Fly in any direction at speed, ramming and damaging enemies on collision.',st:{cd:'5s'}},
+{k:'RMB',n:'Defense Matrix',d:'Consume a resource bar to delete all incoming projectiles — including most ultimates — in a cone in front of D.Va.',st:{cd:'6s full recharge'}},
+{k:'E',n:'Micro Missiles',d:'Fire a volley of explosive rockets. Can be used simultaneously with other abilities for combo burst damage.',st:{cd:'8s'}},
 {k:'Q',n:'Self-Destruct',u:1,d:'Eject from the mech and set it to overload. After a short countdown it detonates for massive damage across a huge radius.',va:'"Activating self-destruct sequence!"',ve:'"Nerf this!"'},
 {k:'Q (Pilot)',n:'Call Mech',u:1,d:'Pilot form only: call down a replacement mech from orbit.',va:'"D.Va is back in the game!"',ve:'"Nerf this!"'},
 {k:'Passive',n:'Eject!',d:'D.Va automatically ejects from the mech when it is destroyed, switching to the weaker Pilot form.'},
@@ -163,13 +191,13 @@ pk:[
 st:"Defense Matrix is the only ability in the game that can physically eat entire ultimates — Graviton Surge, Blizzard, Dragonstrike — making D.Va invaluable against projectile-heavy comps. Her two-life mechanic and Self-Destruct threat force enemies to constantly track her position. Boosters provide unmatched tank mobility, enabling instant backline dives or instant peels for threatened supports.",
 ct:{tank:"Zarya hard-counters her — Projected Barriers protect allies from Fusion Cannons while charging Zarya's own beam. Wrecking Ball can disrupt her Booster trajectory mid-flight.",dps:"Sombra's hack disables both Defense Matrix and Boosters completely. Junkrat's grenades and Reaper's shotguns both bypass the Matrix.",sup:"Ana's Biotic Grenade negates her passive health regeneration between mech forms. Kiriko's Suzu can save targets she is trying to burst with Micro Missiles combos."}},
 
-{r:'tank',sr:'Stalwart',n:'Domina',sl:'domina',nat:'India',fl:'in',isNew:1,season:'S1 · Feb 2026',
+{r:'tank',sr:'Stalwart',n:'Domina',sl:'domina',nat:'India',fl:'in',
 ov:"A long-range poke tank who controls territory with segmented hard-light barriers, sustains herself through ability-damage shield regen, and imprisons enemies with Panopticon.",
 ab:[
 {k:'LMB',n:'Photon Magnum',d:'Medium-range charging beam that culminates in a high-impact burst shot. Longest-range primary weapon of any tank.'},
-{k:'Shift',n:'Barrier Array',d:'Deploy a segmented hard-light barrier. Each section must be destroyed independently, demanding concentrated enemy firepower.'},
-{k:'E',n:'Sonic Repulsors',d:'Push enemies back with a hard-light shockwave. Enemies colliding with a wall are stunned.'},
-{k:'RMB',n:'Crystal Charge',d:'Project a hard-light crystal, then reactivate to detonate it for area damage. Can be placed pre-emptively.'},
+{k:'Shift',n:'Barrier Array',d:'Deploy a segmented hard-light barrier. Each section must be destroyed independently, demanding concentrated enemy firepower.',st:{cd:'~14s'}},
+{k:'E',n:'Sonic Repulsors',d:'Push enemies back with a hard-light shockwave. Enemies colliding with a wall are stunned.',st:{cd:'~8s'}},
+{k:'RMB',n:'Crystal Charge',d:'Project a hard-light crystal, then reactivate to detonate it for area damage. Can be placed pre-emptively.',st:{cd:'~10s'}},
 {k:'Q',n:'Panopticon',u:1,d:'Fire a hard-light barrier that imprisons enemies caught inside, blocking their outgoing damage and healing before detonating.',va:'"Eyes everywhere — Panopticon!"',ve:'"[Confirm in-game]"'},
 {k:'Passive',n:'Reconstruction',d:"Dealing damage with abilities restores a portion of Domina's shield health, keeping her self-sustained at range."},
 ],
@@ -182,13 +210,13 @@ pk:[
 st:"Her Barrier Array forces enemies to commit enormous damage to clearing coverage rather than attacking teammates. Panopticon is one of the highest-impact tank ultimates, removing multiple enemies from a fight by simultaneously blocking their damage and healing. Reconstruction makes her self-sustaining in poke-heavy fights where most tanks would need constant healer attention.",
 ct:{tank:"Dive tanks like Winston and Doomfist can leap directly over or past her barrier. Ramattra's Nemesis Form punches through barrier segments quickly.",dps:"Reaper and Sombra close the distance before her poke kit can respond. Sombra's hack strips Reconstruction and all her abilities simultaneously.",sup:"Ana's Sleep Dart stops her exposed in the open. Kiriko's Swift Step lets her escape any Crystal Charge placement."}},
 
-{r:'tank',sr:'Strongarm',n:'Doomfist',sl:'doomfist',nat:'Nigeria',fl:'ng',
+{r:'tank',sr:'Initiator',n:'Doomfist',sl:'doomfist',nat:'Nigeria',fl:'ng',
 ov:"A punishing close-range brawler who generates overhealth through ability combos, wall-slams enemies with Rocket Punch, and repositions anywhere on the map with Meteor Strike.",
 ab:[
 {k:'LMB',n:'Hand Cannon',d:'Short-range auto-reloading shotgun. Devastating in melee range, negligible at distance.'},
-{k:'Shift',n:'Rocket Punch',d:'Hold to charge, then release to launch forward and knock enemies back. Bonus damage if the enemy hits a wall.'},
-{k:'E',n:'Seismic Slam',d:'Leap into the air and smash the ground, launching nearby enemies upward.'},
-{k:'RMB',n:'Power Block',d:'Brace to protect from frontal attacks. Blocking heavy damage empowers the next Rocket Punch for extra distance and damage.'},
+{k:'Shift',n:'Rocket Punch',d:'Hold to charge, then release to launch forward and knock enemies back. Bonus damage if the enemy hits a wall.',st:{cd:'4s'}},
+{k:'E',n:'Seismic Slam',d:'Leap into the air and smash the ground, launching nearby enemies upward.',st:{cd:'7s'}},
+{k:'RMB',n:'Power Block',d:'Brace to protect from frontal attacks. Blocking heavy damage empowers the next Rocket Punch for extra distance and damage.',st:{cd:'~1.5s resource'}},
 {k:'Q',n:'Meteor Strike',u:1,d:'Leap high into the air, move a targeting circle, then strike for massive AoE damage.',va:'"Doomfist activating Meteor Strike!"',ve:'"Meteor Strike!"'},
 {k:'Passive',n:'The Best Defense…',d:'Ability damage generates temporary overhealth, keeping Doomfist durable in sustained fights.'},
 ],
@@ -201,13 +229,13 @@ pk:[
 st:"Doomfist generates overhealth so rapidly from ability damage that he is extremely difficult to burst down without focused coordination. Wall-slam combos with Rocket Punch can eliminate squishy targets from full health in a single combo. Meteor Strike can be used both as an engage and a disengage, repositioning him anywhere in its large targeting radius.",
 ct:{tank:"Zarya can bubble allies he is punching into walls, denying the wall-slam damage bonus. Reinhardt's Earthshatter stops him cold mid-combo.",dps:"Cassidy's Magnetic Grenade and Mei's freeze interrupt his combo windows mid-flight. Pharah and Echo fight from aerial angles he cannot reach.",sup:"Ana's Sleep Dart can stop him mid-Seismic Slam. Kiriko's Suzu can cleanse the knockback effect and protect targeted allies."}},
 
-{r:'tank',sr:'Anchor',n:'Hazard',sl:'hazard',nat:'Scotland',fl:'gb-sct',isNew:1,season:'S10 · 2024',
+{r:'tank',sr:'Stalwart',n:'Hazard',sl:'hazard',nat:'Scotland',fl:'gb-sct',
 ov:"A terrain-creating disruptor who isolates enemies with Jagged Wall, retaliates with homing Spike Guard fire, and accesses ledges other tanks cannot reach via his Vault passive.",
 ab:[
 {k:'LMB',n:'Bonespur',d:'Close-range shotgun. Each shot generates ammo for Spike Guard.'},
-{k:'Shift',n:'Violent Leap',d:'Lunge forward with a slashing melee attack, crossing gaps and damaging enemies on landing.'},
-{k:'E',n:'Spike Guard',d:'Grow bone spikes that reduce incoming damage and return homing spikes at nearby attackers.'},
-{k:'RMB',n:'Jagged Wall',d:'Grow a jagged bone wall from the ground to block paths, isolate enemies, or split teams in half.'},
+{k:'Shift',n:'Violent Leap',d:'Lunge forward with a slashing melee attack, crossing gaps and damaging enemies on landing.',st:{cd:'7s'}},
+{k:'E',n:'Spike Guard',d:'Grow bone spikes that reduce incoming damage and return homing spikes at nearby attackers.',st:{cd:'9s'}},
+{k:'RMB',n:'Jagged Wall',d:'Grow a jagged bone wall from the ground to block paths, isolate enemies, or split teams in half.',st:{cd:'~14s'}},
 {k:'Q',n:'Downpour',u:1,d:'Release a torrent of bone spikes in a wide area, rooting all enemies hit for several seconds.',va:'"Hazard activating Downpour!"',ve:'"Downpour!"'},
 {k:'Passive',n:'Vault',d:'Hazard can grab ledges and vault over surfaces that other heroes cannot scale.'},
 ],
@@ -220,13 +248,13 @@ pk:[
 st:"Jagged Wall's terrain manipulation can split an enemy team in half at critical moments, separating supports from their tank mid-fight. Spike Guard makes him dangerous to attack at close range — every hit triggers return fire that tracks the attacker. His Vault passive gives him flanking angles no other tank can access on any map.",
 ct:{tank:"Sigma and Orisa poke him from range where his shotgun is ineffective. Winston leaps directly over Jagged Wall to apply backline pressure.",dps:"Sojourn, Widowmaker, and Ashe deal reliable long-range damage he cannot reach. Genji and Tracer dodge over or around his walls.",sup:"Ana's Sleep Dart stops his Violent Leap mid-animation. Sombra's hack disables Jagged Wall and Spike Guard simultaneously."}},
 
-{r:'tank',sr:'Brawler',n:'Junker Queen',sl:'junker-queen',nat:'Australia',fl:'au',
+{r:'tank',sr:'Stalwart',n:'Junker Queen',sl:'junker-queen',nat:'Australia',fl:'au',
 ov:"An aggressive wound-applying brawler who self-heals through Adrenaline Rush, thriving in chokepoints where Carnage and Rampage cleave connect repeatedly.",
 ab:[
 {k:'LMB',n:'Scattergun',d:'Powerful close-range shotgun. Critical hits apply a wound that heals Junker Queen over time via Adrenaline Rush.'},
-{k:'Shift',n:'Jagged Blade',d:'Throw your blade to wound a target; reactivate to recall it, pulling the stuck enemy toward you.'},
-{k:'E',n:'Carnage',d:'Swing your axe in a wide arc, applying a wound to all enemies hit.'},
-{k:'RMB',n:'Commanding Shout',d:"Boost nearby allies' health and movement speed for a short duration."},
+{k:'Shift',n:'Jagged Blade',d:'Throw your blade to wound a target; reactivate to recall it, pulling the stuck enemy toward you.',st:{cd:'6s'}},
+{k:'E',n:'Carnage',d:'Swing your axe in a wide arc, applying a wound to all enemies hit.',st:{cd:'8s'}},
+{k:'RMB',n:'Commanding Shout',d:"Boost nearby allies' health and movement speed for a short duration.",st:{cd:'15s'}},
 {k:'Q',n:'Rampage',u:1,d:'Charge forward, wounding all enemies in your path and preventing them from being healed.',va:'"Let\'s take \'em to the Wasteland!"',ve:'"Time for the reckoning!"'},
 {k:'Passive',n:'Adrenaline Rush',d:'Heal from all wound damage you inflict on enemies over time.'},
 ],
@@ -239,13 +267,13 @@ pk:[
 st:"Adrenaline Rush makes her one of the most self-sustaining tanks, healing off every enemy she wounds in close range. Rampage prevents healing on all enemies in her path — a fight-winning ability in chokepoints. Commanding Shout's health boost can give the whole team temporary bulk when pushing through a contested corridor.",
 ct:{tank:"Orisa's Fortify and Javelin Spin can deny her approach. Ramattra's Nemesis Form out-brawls her at the same range.",dps:"Kiriko's Suzu cleanses bleed completely, shutting down Adrenaline Rush entirely. Reaper can lifesteal through her aggression at close range.",sup:"Ana's Biotic Grenade stacks with Rampage, applying anti-heal to already-wounded targets. Sombra's hack disables Adrenaline Rush healing."}},
 
-{r:'tank',sr:'Brawler',n:'Mauga',sl:'mauga',nat:'Samoa',fl:'ws',
+{r:'tank',sr:'Bruiser',n:'Mauga',sl:'mauga',nat:'Samoa',fl:'ws',
 ov:"A dual-chaingun heavyweight who heals himself and nearby allies by landing critical hits while Cardiac Overdrive is active, rewarding relentless forward aggression.",
 ab:[
 {k:'LMB',n:'Incendiary Chaingun',d:'Fires bullets that ignite enemies on critical hits. Pairs with Cardiac Overdrive for sustained team healing.'},
 {k:'RMB',n:'Volatile Chaingun',d:'Fires explosive bullets dealing area damage on critical hits, useful for shredding barriers.'},
-{k:'Shift',n:'Overrun',d:'Charge forward and stomp to launch enemies. Mauga is Unstoppable during the charge.'},
-{k:'E',n:'Cardiac Overdrive',d:'Gain damage reduction; nearby allies heal by dealing damage. Mauga heals himself on critical hits.'},
+{k:'Shift',n:'Overrun',d:'Charge forward and stomp to launch enemies. Mauga is Unstoppable during the charge.',st:{cd:'12s'}},
+{k:'E',n:'Cardiac Overdrive',d:'Gain damage reduction; nearby allies heal by dealing damage. Mauga heals himself on critical hits.',st:{cd:'12s'}},
 {k:'Q',n:'Cage Fight',u:1,d:'Deploy a cylindrical barrier around yourself and nearby enemies, trapping them with you and replenishing your ammo.',va:'"We got them where we want them!"',ve:'"Come on, stay a while!" (Samoan)'},
 {k:'Passive',n:'Two Hearts',d:'Mauga has two cybernetic hearts, giving him a larger health pool than most tanks.'},
 ],
@@ -258,13 +286,13 @@ pk:[
 st:"Cardiac Overdrive effectively multiplies the healing capacity of the whole team, making him extremely hard to outlast in sustained brawls. His dual chainguns can simultaneously ignite with one and deal explosive AoE with the other, giving him versatility against both shielded and grouped targets. Cage Fight forces enemies to fight him at close range where he excels.",
 ct:{tank:"Wrecking Ball's extreme mobility lets him avoid Cage Fight entirely. Sigma's ranged toolkit avoids his close-range dominance.",dps:"Sombra's hack shuts off Cardiac Overdrive, cutting off both his self-heal and team heal. Pharah attacks from aerial angles his chainguns cannot track.",sup:"Zenyatta's Discord Orb punishes his large hitbox significantly. Ana's Sleep Dart stops Overrun mid-charge."}},
 
-{r:'tank',sr:'Anchor',n:'Orisa',sl:'orisa',nat:'Numbani',fl:null,
+{r:'tank',sr:'Bruiser',n:'Orisa',sl:'orisa',nat:'Numbani',fl:null,
 ov:"A slow, powerful anchor tank who controls space with energy javelin knockback, deflects projectiles with Javelin Spin, and becomes briefly unstoppable with Fortify.",
 ab:[
 {k:'LMB',n:'Fusion Driver',d:'Automatic long-range projectile weapon with no damage falloff. Excellent sustained poke while moving.'},
-{k:'Shift',n:'Fortify',d:'Gain temporary damage reduction and immunity to most movement-impairing effects. Move faster while firing.'},
-{k:'E',n:'Javelin Spin',d:'Spin your javelin to deflect projectiles and push enemies aside. Move faster during spin.'},
-{k:'RMB',n:'Energy Javelin',d:'Throw an energy javelin that stuns and knocks back enemies. Bonus damage if they hit a wall.'},
+{k:'Shift',n:'Fortify',d:'Gain temporary damage reduction and immunity to most movement-impairing effects. Move faster while firing.',st:{cd:'8s'}},
+{k:'E',n:'Javelin Spin',d:'Spin your javelin to deflect projectiles and push enemies aside. Move faster during spin.',st:{cd:'5s'}},
+{k:'RMB',n:'Energy Javelin',d:'Throw an energy javelin that stuns and knocks back enemies. Bonus damage if they hit a wall.',st:{cd:'6s'}},
 {k:'Q',n:'Terra Surge',u:1,d:'Sweep enemies in with a gravity vortex then unleash a massive energy surge. Charges faster with each Javelin Spin use.',va:'"Orisa activating Terra Surge!"',ve:'"Padé aynmo re!" (Yoruba)'},
 {k:'Passive',n:'Javelin Charge',d:'Terra Surge charges faster each time Javelin Spin is used in a match.'},
 ],
@@ -277,34 +305,34 @@ pk:[
 st:"Fusion Driver's lack of damage falloff gives her the best long-range primary of any tank, letting her poke from safety while the team advances. Javelin Spin deflects entire projectile volleys, making her almost immune to projectile-based ultimates. Terra Surge's gravity pull can gather a full enemy team for instant follow-up burst from DPS.",
 ct:{tank:"Winston and Doomfist can dive past her Javelin Spin. Ramattra's Nemesis Form punches directly through her armor.",dps:"Sombra's hack disables Fortify and Javelin Spin entirely. Reaper and Bastion's continuous fire bypasses Javelin Spin.",sup:"Ana's Sleep Dart can interrupt Terra Surge wind-up. Kiriko's Suzu cleanses teammates pulled by Terra Surge mid-cast."}},
 
-{r:'tank',sr:'Brawler',n:'Ramattra',sl:'ramattra',nat:'Nepal',fl:'np',
+{r:'tank',sr:'Stalwart',n:'Ramattra',sl:'ramattra',nat:'Nepal',fl:'np',
 ov:"A dual-form tank who switches between ranged poke in Omnic Form and devastating melee pressure in Nemesis Form, becoming near-immortal during Annihilation.",
 ab:[
 {k:'LMB',n:'Void Accelerator',d:'Precise stream of projectiles in Omnic Form. Consistent damage requiring good aim.'},
 {k:'LMB (Nemesis)',n:'Pummel',d:'Rapid massive fist strikes in Nemesis Form. Deals huge damage and bypasses barriers.'},
-{k:'Shift',n:'Nemesis Form',d:'Transform gaining a large health boost, armor, and a powerful melee punch attack for 8 seconds.'},
-{k:'E',n:'Void Barrier',d:'Create a square hard-light barrier at a target location in Omnic Form.'},
-{k:'E (Nemesis)',n:'Block',d:'Block all incoming frontal damage while in Nemesis Form.'},
-{k:'RMB',n:'Ravenous Vortex',d:'Fire a projectile that creates a gravity field on impact, pulling enemies down and slowing them.'},
+{k:'Shift',n:'Nemesis Form',d:'Transform gaining a large health boost, armor, and a powerful melee punch attack for 8 seconds.',st:{cd:'10s'}},
+{k:'E',n:'Void Barrier',d:'Create a square hard-light barrier at a target location in Omnic Form.',st:{cd:'10s'}},
+{k:'E (Nemesis)',n:'Block',d:'Block all incoming frontal damage while in Nemesis Form.',st:{cd:'—'}},
+{k:'RMB',n:'Ravenous Vortex',d:'Fire a projectile that creates a gravity field on impact, pulling enemies down and slowing them. Explodes on ground contact; can be manually detonated mid-air. (Explosion damage reduced from 50 to 15.)'},
 {k:'Q',n:'Annihilation',u:1,d:'Enter Nemesis Form and release a surging wave of energy. Duration extends as long as nearby enemies are within the aura.',va:'"Rip them to pieces!"',ve:'"Suffer! As I have!"'},
 {k:'Passive',n:'Overhealth',d:'Nemesis Form converts extra health to significant temporary overhealth on activation.'},
 ],
 pk:[
-{t:'Minor',n:'Vortex Pull',d:"Ravenous Vortex's pull effect is stronger, drawing enemies in more rapidly."},
-{t:'Minor',n:'Extended Nemesis',d:'Nemesis Form duration is increased by 2 seconds.'},
+{t:'Minor',n:'Prolonged Barrier',d:'Void Barrier duration and size increased by 25%.'},
+{t:'Major',n:'Void Surge',d:'Void Accelerator gains increased fire rate and projectile speed (delay between bursts reduced). Moved to Major Perk.'},
 {t:'Major',n:'Immovable Object',d:'Ramattra is Unstoppable during Nemesis Form.'},
 {t:'Major',n:'Void Surge',d:'Void Accelerator gains increased fire rate and projectile speed after Nemesis Form ends.'},
 ],
 st:"Annihilation is one of the most impactful tank ultimates — he becomes near-unkillable while dealing sustained damage to everything nearby. Ravenous Vortex pairs perfectly with Annihilation, pulling enemies into the damage aura before it even activates. His ability to switch between poke and brawl makes him adaptable to almost every enemy composition.",
 ct:{tank:"Zarya can bubble teammates during Annihilation to reduce the damage they take. D.Va's Defense Matrix absorbs Ravenous Vortex projectiles.",dps:"Reaper and Junkrat excel at burning through his large hitbox quickly. Pharah attacks from aerial angles his melee cannot reach.",sup:"Kiriko's Suzu briefly reduces damage received from Annihilation. Ana's Sleep Dart can interrupt his Nemesis Form transformation."}},
 
-{r:'tank',sr:'Anchor',n:'Reinhardt',sl:'reinhardt',nat:'Germany',fl:'de',
+{r:'tank',sr:'Stalwart',n:'Reinhardt',sl:'reinhardt',nat:'Germany',fl:'de',
 ov:"The classic shield tank who protects his team behind a massive energy barrier and punishes grouped enemies with Earthshatter, one of the most fight-winning ultimates in the game.",
 ab:[
 {k:'LMB',n:'Rocket Hammer',d:'Massive melee weapon with enormous swing range. Deals huge damage in a wide arc per swing.'},
-{k:'RMB',n:'Barrier Field',d:'Project a large energy barrier in front of you, blocking all damage. Finite health, recharges over time.'},
-{k:'Shift',n:'Charge',d:'Charge forward at high speed, pinning an enemy and slamming them into a wall for massive damage.'},
-{k:'E',n:'Fire Strike',d:'Hurl a flaming projectile that pierces through barriers and deals damage to all enemies it passes through.'},
+{k:'RMB',n:'Barrier Field',d:'Project a large energy barrier in front of you, blocking all damage. Finite health, recharges over time.',st:{cd:'Finite HP barrier (1,800 HP); regens 150/s after 2s down'}},
+{k:'Shift',n:'Charge',d:'Charge forward at high speed, pinning an enemy and slamming them into a wall for massive damage.',st:{cd:'8s'}},
+{k:'E',n:'Fire Strike',d:'Hurl a flaming projectile that pierces through barriers and deals damage to all enemies it passes through.',st:{cd:'6s per charge'}},
 {k:'Q',n:'Earthshatter',u:1,d:'Slam the ground, knocking down all enemies in front of you in a wide cone.',va:'"For the Crusaders!"',ve:'"Hammer DOWN!" / "Touchdown!"'},
 {k:'Passive',n:'Steadfast',d:'Reduces the distance Reinhardt is moved by knockback effects.'},
 ],
@@ -317,32 +345,32 @@ pk:[
 st:"A coordinated team behind Reinhardt's barrier is effectively immune to projectile damage, making him dominant in any push-forward composition. Earthshatter landing on a clustered enemy team can win a round outright — one of the highest-value teamfight ultimates in the game. Fire Strike's wall penetration provides consistent long-range pressure even behind cover.",
 ct:{tank:"Sigma and Orisa chip his barrier from long range while staying safe. Ramattra's Nemesis Form punches directly through his barrier.",dps:"Sombra's hack eliminates his barrier instantly. Junkrat and Pharah bypass his shield with indirect and aerial fire. Mei can wall off his Charge path.",sup:"Lucio can boop allies away from Earthshatter's cone at the last moment. Kiriko's Suzu cleanses the knockdown on teammates caught by Earthshatter."}},
 
-{r:'tank',sr:'Anchor',n:'Roadhog',sl:'roadhog',nat:'Australia',fl:'au',
+{r:'tank',sr:'Bruiser',n:'Roadhog',sl:'roadhog',pickrate:'low',nat:'Australia',fl:'au',
 ov:"A self-sustaining solo-pick artist who secures isolated kills with his Chain Hook combo and heals himself to near-full health with Take a Breather.",
 ab:[
 {k:'LMB',n:'Scrap Gun',d:'Close-range shotgun with wide spread. Devastating up close, ineffective at range.'},
 {k:'RMB',n:'Scrap Gun (Alt)',d:'Fire a long-range spread burst from the Scrap Gun, better for punishing specific distant targets.'},
-{k:'Shift',n:'Take a Breather',d:'Inhale gas to restore a massive amount of health and gain brief damage reduction. Long cooldown.'},
-{k:'E',n:'Chain Hook',d:'Launch a chain that pulls the first enemy hit directly to you, briefly stunning them.'},
+{k:'Shift',n:'Take a Breather',d:'Inhale gas to restore a massive amount of health and gain brief damage reduction. Long cooldown.',st:{cd:'Resource-based'}},
+{k:'E',n:'Chain Hook',d:'Launch a chain that pulls the first enemy hit directly to you, briefly stunning them.',st:{cd:'8s'}},
 {k:'Q',n:'Whole Hog',u:1,d:'Rev up the Scrap Gun to fire a continuous stream of shrapnel that knocks enemies back.',va:'"Unloading scrap!"',ve:'[Roadhog laughs]'},
 {k:'Passive',n:'Pig Pen',d:'Roadhog regenerates health passively faster than most heroes.'},
 ],
 pk:[
 {t:'Minor',n:'Gulp',d:'Take a Breather heals an additional 50 health over 1 second after the ability ends.'},
 {t:'Minor',n:'Chain Yank',d:"Chain Hook's pull is faster and the stun duration is increased slightly."},
-{t:'Major',n:'Pig Pen Trap',d:'Take a Breather leaves a gas cloud that slows enemies who walk through it.'},
+{t:'Major',n:'Hogdrogen Exposure',d:'Take a Breather now heals nearby allies for 50% of its healing amount.'},
 {t:'Major',n:'Scrap Spray',d:'Scrap Gun alternate fire has increased radius and knockback.'},
 ],
 st:"Take a Breather restores so much health that Roadhog can effectively reset mid-fight, negating burst damage from uncoordinated opponents. Chain Hook bypasses any amount of teammates or barriers to pull a specific target to him. Whole Hog can push enemies off objectives or ledges permanently in open maps.",
 ct:{tank:"Zarya's bubbles save allies he has just hooked. Orisa's Javelin stuns him mid-Take a Breather.",dps:"Ana's Biotic Grenade fully negates Take a Breather — her single most powerful individual interaction in the game. Cassidy's Magnetic Grenade sticks through his movement.",sup:"Ana is his hardest counter — anti-heal while he breathes means he heals for nearly nothing. Sombra hack disables all his abilities simultaneously."}},
 
-{r:'tank',sr:'Anchor',n:'Sigma',sl:'sigma',nat:'Netherlands',fl:'nl',
+{r:'tank',sr:'Stalwart',n:'Sigma',sl:'sigma',nat:'Netherlands',fl:'nl',
 ov:"A versatile gravity-wielding tank who absorbs projectiles with Kinetic Grasp, repositions a floating barrier freely, and wins teamfights with the game-changing Gravitic Flux.",
 ab:[
 {k:'LMB',n:'Hyperspheres',d:'Launch two gravitic charges that implode after a short distance, dealing AoE damage. Excellent poke with practice.'},
-{k:'Shift',n:'Experimental Barrier',d:'Deploy a floating barrier and guide it to any position; reactivate to recall. Very flexible coverage.'},
-{k:'E',n:'Kinetic Grasp',d:'Freeze incoming projectiles in place, absorbing them and converting blocked damage into temporary overhealth.'},
-{k:'RMB',n:'Accretion',d:'Gather debris and throw it at an enemy, knocking them down and dealing significant damage.'},
+{k:'Shift',n:'Experimental Barrier',d:'Deploy a floating barrier and guide it to any position; reactivate to recall. Very flexible coverage.',st:{cd:'2s recalled / 5s destroyed; barrier 650 HP'}},
+{k:'E',n:'Kinetic Grasp',d:'Freeze incoming projectiles in place, absorbing them and converting blocked damage into temporary overhealth.',st:{cd:'~12s'}},
+{k:'RMB',n:'Accretion',d:'Gather debris and throw it at an enemy, knocking them down and dealing significant damage.',st:{cd:'10s'}},
 {k:'Q',n:'Gravitic Flux',u:1,d:'Lift all enemies in a selected area into the air, then slam them into the ground for massive damage.',va:'"What is that melody?"',ve:'"Het universum zingt voor mij!" (Dutch)'},
 {k:'Passive',n:'Levitate',d:'Sigma hovers slightly off the ground, giving a small elevation advantage.'},
 ],
@@ -358,10 +386,10 @@ ct:{tank:"D.Va can Defense Matrix his Hyperspheres. Reinhardt's Firestrike passe
 {r:'tank',sr:'Initiator',n:'Winston',sl:'winston',nat:'Unknown',fl:null,
 ov:"The definitive dive tank who leaps directly into enemy backlines with Jump Pack and auto-locks onto multiple targets simultaneously with his Tesla Cannon.",
 ab:[
-{k:'LMB',n:'Tesla Cannon',d:'Automatic short-range beam that hits all enemies in front of Winston without requiring precise aim.'},
-{k:'RMB',n:'Tesla Cannon (Charged)',d:'Hold to charge and fire a long-range bolt dealing high single-target damage.'},
-{k:'Shift',n:'Jump Pack',d:'Leap a great distance in any direction; landing deals AoE damage at the impact zone.'},
-{k:'E',n:'Barrier Projector',d:'Deploy a dome-shaped barrier that protects allies inside while allowing Winston to attack through it.'},
+{k:'LMB',n:'Tesla Cannon',d:'Automatic short-range beam that hits all enemies in front of Winston without requiring precise aim. Deals 50% increased damage to deployables.'},
+{k:'RMB',n:'Tesla Cannon (Charged)',d:'Hold to charge and fire a long-range bolt dealing high single-target damage.',st:{cd:'~1.5s charge'}},
+{k:'Shift',n:'Jump Pack',d:'Leap a great distance in any direction; landing deals AoE damage at the impact zone.',st:{cd:'6s'}},
+{k:'E',n:'Barrier Projector',d:'Deploy a dome-shaped barrier that protects allies inside while allowing Winston to attack through it.',st:{cd:'13s; 700 HP barrier'}},
 {k:'Q',n:'Primal Rage',u:1,d:'Enter a feral state boosting health significantly, empowering leaps, and knocking enemies away with powerful melee attacks.',va:'[Winston roars]',ve:'[Winston roars]'},
 {k:'Passive',n:'Aerial Agility',d:'Winston can perform a second jump mid-air.'},
 ],
@@ -374,13 +402,13 @@ pk:[
 st:"Winston's Jump Pack makes him the fastest initiator in the game — he can reach any backline target in under a second from almost anywhere on the map. Tesla Cannon requires no aim, letting him focus entirely on positioning and ability timing during the dive. Barrier Projector during a dive protects him and allows allies to push up safely inside the dome.",
 ct:{tank:"Zarya directly counters him — she bubbles allies he dives and her beam destroys him up close. Reinhardt's Earthshatter catches him on landing.",dps:"Sombra hack removes Jump Pack and Barrier Projector simultaneously. Pharah matches his mobility in the air. Cassidy's Magnetic Grenade tracks through his leap.",sup:"Ana's Sleep Dart stops him mid-Jump Pack. Kiriko can teleport away the moment he lands on her."}},
 
-{r:'tank',sr:'Disruptor',n:'Wrecking Ball',sl:'wrecking-ball',nat:'Unknown',fl:null,
+{r:'tank',sr:'Initiator',n:'Wrecking Ball',sl:'wrecking-ball',nat:'Unknown',fl:null,
 ov:"An extreme-mobility chaos-creator who swings around the battlefield at high speed, knocking enemies aside, and deploys Minefield to permanently zone entire areas.",
 ab:[
 {k:'LMB',n:'Quad Cannons',d:'Automatic weapon that only deploys in Walker mode. High DPS when stationary and targeting enemies.'},
-{k:'Shift',n:'Grappling Claw',d:'Launch a grappling hook at a surface to swing at high speed. Knockback on impact scales with velocity.'},
-{k:'E',n:'Adaptive Shield',d:'Generate temporary shields, gaining more for each nearby enemy.'},
-{k:'RMB',n:'Piledriver',d:'When airborne, slam into the ground to launch enemies upward.'},
+{k:'Shift',n:'Grappling Claw',d:'Launch a grappling hook at a surface to swing at high speed. Knockback on impact scales with velocity.',st:{cd:'—'}},
+{k:'E',n:'Adaptive Shield',d:'Generate temporary shields, gaining more for each nearby enemy.',st:{cd:'15s'}},
+{k:'RMB',n:'Piledriver',d:'When airborne, slam into the ground to launch enemies upward.',st:{cd:'~8s'}},
 {k:'Q',n:'Minefield',u:1,d:'Deploy a volley of proximity mines across a large area that arm shortly after placement.',va:'"Minefield deployed."',ve:'"Area denied."'},
 {k:'Passive',n:'Heavy Plating',d:'Wrecking Ball takes reduced knockback from all sources.'},
 ],
@@ -393,13 +421,13 @@ pk:[
 st:"Wrecking Ball creates unmatched chaos in enemy positioning — Piledriver launches enemies airborne while Grappling Claw knockback disrupts formations on every pass. Adaptive Shield scales with nearby enemies, making him briefly very durable when surrounded. Minefield can zone an entire objective, forcing the enemy to commit to clearing it before pushing.",
 ct:{tank:"Zarya charges off enemies he scatters then follows up with burst damage. Reinhardt's Earthshatter catches him when he finally stops moving.",dps:"Sombra hack is his hardest counter — she roots him in place and disables every ability. Cassidy's Magnetic Grenade sticks even while rolling.",sup:"Ana's Sleep Dart stops his momentum mid-swing. Zenyatta's Discord Orb makes him easy to kill during brief windows when he slows down."}},
 
-{r:'tank',sr:'Anchor',n:'Zarya',sl:'zarya',nat:'Russia',fl:'ru',
+{r:'tank',sr:'Bruiser',n:'Zarya',sl:'zarya',nat:'Russia',fl:'ru',
 ov:"A high-damage anchor tank who charges her Particle Cannon by absorbing damage with Particle Barriers, dealing more DPS than most damage heroes at full energy.",
 ab:[
 {k:'LMB',n:'Particle Cannon (Beam)',d:'Short-range beam. Damage scales directly with current energy level. At 100 energy, the highest DPS of any tank weapon.'},
-{k:'RMB',n:'Particle Cannon (Burst)',d:'Fire an energy grenade that explodes on impact for AoE damage. Also scales with energy.'},
-{k:'Shift',n:'Particle Barrier',d:'Apply a personal bubble that absorbs all incoming damage and converts it to energy charge.'},
-{k:'E',n:'Projected Barrier',d:'Apply the same bubble to a targeted ally. Protects them from damage and charges Zarya simultaneously.'},
+{k:'RMB',n:'Particle Cannon (Burst)',d:'Fire an energy grenade that explodes on impact for AoE damage. Also scales with energy.',st:{cd:'~0.5s recharge'}},
+{k:'Shift',n:'Particle Barrier',d:'Apply a personal bubble that absorbs all incoming damage and converts it to energy charge.',st:{cd:'10s (shared charge with E)'}},
+{k:'E',n:'Projected Barrier',d:'Apply the same bubble to a targeted ally. Protects them from damage and charges Zarya simultaneously.',st:{cd:'10s (shared charge with Shift)'}},
 {k:'Q',n:'Graviton Surge',u:1,d:'Fire a gravitic charge that creates a gravity well on impact, pulling all nearby enemies to a single point.',va:'"Fire at will!"',ve:'"Ogon\' po gotovnosti!" (Russian)'},
 {k:'Passive',n:'Energy',d:"Zarya's energy level (0–100) directly scales her beam damage. She must absorb damage through barriers to maintain high charge."},
 ],
@@ -419,13 +447,13 @@ ct:{tank:"D.Va cannot absorb her beam with Defense Matrix since beams bypass it.
 </script>
 <script id="dps1-data">
 const DPS1=[
-{r:'dps',sr:'Flanker',n:'Anran',sl:'anran',nat:'China',fl:'cn',isNew:1,season:'S1 · Feb 2026',
+{r:'dps',sr:'Flanker',n:'Anran',sl:'anran',nat:'China',fl:'cn',
 ov:"A fire-based flanker who ignites enemies, amplifies burn damage, and uniquely auto-revives via Vermillion Revival if she dies while her ultimate is fully charged.",
 ab:[
 {k:'LMB',n:'Zhuque Fans',d:'Twin fans that fire dual fire projectiles, applying the Ignition passive on hit.'},
 {k:'RMB',n:'Fan the Flames',d:'Release a hot wind blast that amplifies all active burn effects on enemies hit.'},
 {k:'Shift',n:'Inferno Rush',d:'Propel forward, damaging all enemies along the path.'},
-{k:'E',n:'Dancing Blaze',d:'Strike nearby enemies while phasing through all incoming damage. Grows stronger with each enemy hit.'},
+{k:'E',n:'Dancing Blaze',d:'Strike nearby enemies while phasing through all incoming damage. Heals Anran for 50 on first enemy hit, 25 per subsequent enemy. Grows stronger with each enemy hit.'},
 {k:'Q',n:'Vermillion Ascent / Revival',u:1,d:'Alive: Charge forward and explode on impact, igniting nearby enemies. Dead with full charge: auto-revives in a fiery explosion.',va:'"Vermillion Ascent!"',ve:'"[Confirm in-game]"'},
 {k:'Passive',n:'Ignition',d:'Fire attacks burn enemies over time. Burning enemies take increased damage from Fan the Flames.'},
 ],
@@ -442,8 +470,8 @@ ct:{tank:"Orisa's Javelin Spin deflects her projectile fans. Zarya's Projected B
 ov:"A mid-range sniper who uses Dynamite for sustained burn pressure, Coach Gun for self-defense and mobility, and deploys B.O.B. as a temporary sixth player.",
 ab:[
 {k:'LMB',n:'The Viper',d:'Lever-action rifle. Hip-fire for automatic shots; scope for high-damage precision shots.'},
-{k:'Shift',n:'Coach Gun',d:"Fire a close-range blast that knocks enemies away and launches Ashe backward — useful for repositioning or denying dives."},
-{k:'E',n:'Dynamite',d:'Throw a bundle of dynamite that detonates on fire or a timer, dealing AoE damage and applying burn.'},
+{k:'Shift',n:'Coach Gun',d:"Fire a close-range blast that knocks enemies away and launches Ashe backward — useful for repositioning or denying dives.",st:{cd:'10s'}},
+{k:'E',n:'Dynamite',d:'Throw a bundle of dynamite that detonates on fire or a timer, dealing AoE damage and applying burn.',st:{cd:'12s'}},
 {k:'Q',n:'B.O.B.',u:1,d:"Summon your omnic butler who charges forward launching enemies airborne, then opens fire with arm cannons.",va:'"Get in there, BOB!"',ve:'"BOB, do somethin\'!"'},
 {k:'Passive',n:'Sharpshooter',d:'Critical hits reduce movement ability cooldowns.'},
 ],
@@ -460,7 +488,7 @@ ct:{tank:"Reinhardt and Sigma provide cover behind barriers. Zarya bubbles allie
 ov:"A transforming DPS who deals the highest raw damage in the game in Assault mode and bombards three locations simultaneously with Artillery ultimate.",
 ab:[
 {k:'LMB',n:'ST-87 Rifle',d:'Standard automatic rifle in Recon mode. Mobile and versatile but not Bastion\'s strength.'},
-{k:'Shift',n:'Config: Assault',d:'Transform into a rotary cannon with devastating close-range spread. Cannot move but deals extreme damage.'},
+{k:'Shift',n:'Config: Assault',d:'Transform into a rotary cannon with devastating close-range spread. Cannot move but deals extreme damage.',st:{cd:'10s'}},
 {k:'E',n:'A-36 Tactical Grenade',d:'Throw a grenade that bounces off surfaces and sticks to enemies on contact, exploding for burst damage.'},
 {k:'Q',n:'Config: Artillery',u:1,d:'Enter Artillery mode and launch three powerful mortar shells at chosen locations from anywhere on the map.',va:'[Beeps]',ve:'[Beeps + air raid siren]'},
 {k:'Passive',n:'Ironclad',d:'Bastion gains 20% damage reduction while in Assault or Artillery mode.'},
@@ -479,8 +507,8 @@ ov:"A reliable mid-range hitscan gunslinger who counters flankers with a self-tr
 ab:[
 {k:'LMB',n:'Peacekeeper',d:'Reliable revolver with good range. High-skill headshot potential makes it rewarding at all levels.'},
 {k:'RMB',n:'Fan the Hammer',d:'Rapidly fire all 6 rounds at reduced accuracy. Best used at point-blank range.'},
-{k:'Shift',n:'Combat Roll',d:'Roll in your movement direction, immediately reloading Peacekeeper mid-animation.'},
-{k:'E',n:'Magnetic Grenade',d:'Throw a grenade that tracks the nearest enemy within range, sticking to them and exploding. Cannot be dodged by Blinks.'},
+{k:'Shift',n:'Combat Roll',d:'Roll in your movement direction, immediately reloading Peacekeeper mid-animation.',st:{cd:'6s'}},
+{k:'E',n:'Magnetic Grenade',d:'Throw a grenade that tracks the nearest enemy within range, sticking to them and exploding. Cannot be dodged by Blinks.',st:{cd:'10s'}},
 {k:'Q',n:'Deadeye',u:1,d:'Lock onto all enemies in your line of sight. The longer you channel, the more damage each lock deals.',va:'"Step right up."',ve:'"It\'s high noon."'},
 {k:'Passive',n:'Sharpshooter',d:'Critical hits reduce movement ability cooldowns.'},
 ],
@@ -493,15 +521,15 @@ pk:[
 st:"Magnetic Grenade's auto-tracking makes it the best anti-flanker tool in the game — it follows Tracer through Blinks and cannot be escaped by most mobility abilities. Deadeye punishes heroes who remain stationary, shutting down Bastions, snipers, and stationary supports. Combat Roll allows mid-fight reloads without a vulnerability window.",
 ct:{tank:"Reinhardt's shield absorbs all his shots. Sigma's Kinetic Grasp absorbs his full Peacekeeper magazine.",dps:"Genji's Deflect sends all his shots back for full damage. Widowmaker out-ranges Deadeye safely. Pharah's aerial mobility makes headshots very difficult.",sup:"Kiriko's small hitbox and Swift Step mobility make her hard to land critical shots on. Ana can Sleep Dart him before Deadeye reaches full charge."}},
 
-{r:'dps',sr:'Flanker',n:'Echo',sl:'echo',nat:'Singapore',fl:'sg',
+{r:'dps',sr:'Recon',n:'Echo',sl:'echo',nat:'Singapore',fl:'sg',
 ov:"A highly mobile aerial DPS who copies enemy heroes with Duplicate and annihilates low-health targets with Focusing Beam.",
 ab:[
 {k:'LMB',n:'Tri-Shot',d:'Fire three projectiles in a triangle pattern. High total damage but each shot requires aim.'},
 {k:'Shift',n:'Glide',d:'Hold while airborne to slow descent and maintain aerial position.'},
-{k:'E',n:'Focusing Beam',d:'Emit a focused beam that deals dramatically increased damage to targets below 50% health.'},
-{k:'RMB',n:'Sticky Bombs',d:'Fire a burst of sticky bombs that attach to surfaces or enemies and detonate after a short delay.'},
+{k:'E',n:'Focusing Beam',d:'Emit a focused beam that deals dramatically increased damage to targets below 50% health.',st:{cd:'6s'}},
+{k:'RMB',n:'Sticky Bombs',d:'Fire a burst of sticky bombs that attach to surfaces or enemies and detonate after a short delay.',st:{cd:'6s'}},
 {k:'F',n:'Flight',d:'Propel into the air for brief free-form movement in any direction.'},
-{k:'Q',n:'Duplicate',u:1,d:'Become a copy of a targeted enemy hero with dramatically accelerated ultimate charge, using their full kit.',va:'"Adaptive circuits engaged — [hero name]"',ve:'"Duplicating — [hero name]"'},
+{k:'Q',n:'Duplicate',u:1,d:'Become a copy of a targeted enemy or allied hero with dramatically accelerated ultimate charge, using their full kit.',va:'"Duplicating — [hero name]"',ve:'"Adaptive circuits engaged — [hero name]"'},
 {k:'Passive',n:'Glide',d:'Echo can glide forward while descending, sustaining aerial position indefinitely.'},
 ],
 pk:[
@@ -513,13 +541,13 @@ pk:[
 st:"Duplicate gives Echo unprecedented flexibility — she can copy any hero and, due to accelerated ult charge, fire their ultimate almost immediately, effectively gifting her team an early extra ultimate. Focusing Beam turns her into an execution weapon: any target below half health can be instantly finished. Flight gives her unique aerial angles no other DPS can access.",
 ct:{tank:"D.Va's Defense Matrix blocks all her Tri-Shot and Sticky Bombs. Orisa's Javelin Spin reflects her projectiles.",dps:"Sombra hack grounds her by disabling Flight and cancels Duplicate mid-cast. Hitscan heroes track her aerial movement easily.",sup:"Ana can snipe her as a large aerial target. Kiriko's Suzu cleanses teammates caught in a Sticky Bomb cluster."}},
 
-{r:'dps',sr:'Flanker',n:'Emre',sl:'emre',nat:'Turkey',fl:'tr',isNew:1,season:'S1 · Feb 2026',
+{r:'dps',sr:'Specialist',n:'Emre',sl:'emre',nat:'Turkey',fl:'tr',
 ov:"A cybernetically-enhanced soldier who fights with burst-rifle aggression, deploys a life-stealing Siphon Blaster for sustain, and takes flight with Override Protocol.",
 ab:[
 {k:'LMB',n:'Synthetic Burst Rifle',d:'Three-round burst weapon. Accurate at range with controllable recoil.'},
 {k:'RMB',n:'Take Aim',d:'Hold to zoom in, tightening accuracy and extending falloff range for long-distance engagements.'},
-{k:'Shift',n:'Siphon Blaster',d:'Deploy a semi-automatic pistol that fires life-stealing explosive rounds. Move faster and jump higher while active.'},
-{k:'E',n:'Cyber Frag',d:'Throw a grenade that detonates shortly after bouncing off a surface. Can be thrown around corners.'},
+{k:'Shift',n:'Siphon Blaster',d:'Deploy a semi-automatic pistol that fires life-stealing explosive rounds. Move faster and jump higher while active.',st:{cd:'Resource-based'}},
+{k:'E',n:'Cyber Frag',d:'Throw a grenade that detonates shortly after bouncing off a surface. Can be thrown around corners.',st:{cd:'10s'}},
 {k:'Q',n:'Override Protocol',u:1,d:'Cybernetics fully take over, launching Emre into the air armed with a cannon — fire rapid explosive blasts or charge up a massive single shot.',va:'"Override Protocol activated!"',ve:'"[Confirm in-game]"'},
 {k:'Passive',n:'Altered Vitals',d:'Passive health regeneration activates sooner and instantly restores 30 health when triggered.'},
 ],
@@ -532,13 +560,13 @@ pk:[
 st:"Siphon Blaster enables sustained fighting well beyond what his rifle alone allows, keeping him alive through exchanges other DPS heroes would need to disengage from. Cyber Frag's wall-bounce enables indirect fire around corners, punishing entrenched targets without line-of-sight. Override Protocol gives him an aerial advantage while unleashing concentrated explosive fire.",
 ct:{tank:"Sigma's Kinetic Grasp absorbs his burst rifle shots. Orisa can Fortify through his grenade burst.",dps:"Tracer can close into his burst rifle accuracy window. Widowmaker and Ashe out-range his primary fire.",sup:"Ana's Sleep Dart can stop Override Protocol mid-flight. Sombra hack removes Siphon Blaster and his mobility tools."}},
 
-{r:'dps',sr:'Sharpshooter',n:'Freja',sl:'freja',nat:'Denmark',fl:'dk',isNew:1,season:'S16 · Apr 2025',
+{r:'dps',sr:'Recon',n:'Freja',sl:'freja',pickrate:'low',nat:'Denmark',fl:'dk',
 ov:"A mobile bounty-hunting crossbow sniper who constantly repositions with Quick Dash and clusters enemies together with Bola Shot for guaranteed follow-up.",
 ab:[
 {k:'LMB',n:'Revdraw Crossbow',d:'Rapid-fire automatic crossbow bolts. Lower per-shot damage than rifles but high fire rate.'},
 {k:'RMB',n:'Take Aim',d:'Slow descent and take precise aim, firing a high-speed explosive bolt. Quick Dash refreshes this ability.'},
-{k:'Shift',n:'Quick Dash',d:"Vault in the direction you're moving and refresh Take Aim simultaneously."},
-{k:'E',n:'Updraft',d:'Launch upward with a gust of wind, gaining significant vertical height.'},
+{k:'Shift',n:'Quick Dash',d:"Vault in the direction you're moving and refresh Take Aim simultaneously.",st:{cd:'5s'}},
+{k:'E',n:'Updraft',d:'Launch upward with a gust of wind, gaining significant vertical height.',st:{cd:'10s'}},
 {k:'Q',n:'Bola Shot',u:1,d:'Fire a bola that ensnares the first target hit, drawing in all nearby enemies for a guaranteed cluster and detonation.',va:'"Bola Shot!"',ve:'"Bola Shot!"'},
 {k:'Passive',n:'Bounty Hunting',d:'Eliminating enemies grants bonus ultimate charge. Three eliminations grant a significant charge bonus.'},
 ],
@@ -556,8 +584,8 @@ ov:"The ultimate mobile flanker who climbs walls, dashes through enemies on kill
 ab:[
 {k:'LMB',n:'Shuriken (Volley)',d:'Throw three shurikens in a fan spread. Best at medium-close range.'},
 {k:'RMB',n:'Shuriken (Fan)',d:'Throw three shurikens in precise sequence at a single target. Better at longer range.'},
-{k:'Shift',n:'Swift Strike',d:'Dash forward through enemies in a line. Resets on elimination.'},
-{k:'E',n:'Deflect',d:'Spin your blade to deflect all projectiles back at enemies, including most ultimates and abilities.'},
+{k:'Shift',n:'Swift Strike',d:'Dash forward through enemies in a line. Resets on elimination.',st:{cd:'8s (resets on kill)'}},
+{k:'E',n:'Deflect',d:'Spin your blade to deflect all projectiles back at enemies, including most ultimates and abilities.',st:{cd:'8s'}},
 {k:'Q',n:'Dragonblade',u:1,d:'Unsheath a legendary sword for 8 seconds. Swift Strike resets on every elimination and deals massive melee damage.',va:'"The dragon becomes me!"',ve:'"Ryūjin no ken wo kurae!" (Japanese)'},
 {k:'Passive',n:'Cyber-Agility',d:'Can double-jump and climb walls.'},
 ],
@@ -574,9 +602,9 @@ ct:{tank:"Zarya's beam tracks through his movement. Reinhardt's Earthshatter cat
 ov:"A precise bow-wielding sniper who one-shots non-tanks with a fully charged arrow, reveals enemies with Sonic Arrow, and sends Dragonstrike through walls to flush fortified positions.",
 ab:[
 {k:'LMB',n:'Storm Bow',d:'Charge and release to fire a high-damage arrow. A fully-charged headshot eliminates most non-tank heroes.'},
-{k:'Shift',n:'Sonic Arrow',d:'Fire an arrow that embeds in a surface and reveals all enemies within its radius through walls.'},
-{k:'E',n:'Storm Arrows',d:'Temporarily fire rapid-fire arrows with no charge required. Excellent burst damage.'},
-{k:'RMB',n:'Lunge',d:'Double-jump in any direction by jumping while airborne.'},
+{k:'Shift',n:'Sonic Arrow',d:'Fire an arrow that embeds in a surface and reveals all enemies within its radius through walls.',st:{cd:'20s'}},
+{k:'E',n:'Storm Arrows',d:'Temporarily fire rapid-fire arrows with no charge required. Excellent burst damage.',st:{cd:'10s'}},
+{k:'RMB',n:'Lunge',d:'Double-jump in any direction by jumping while airborne.',st:{cd:'5s'}},
 {k:'Q',n:'Dragonstrike',u:1,d:'Fire a spirit dragon that travels through all terrain dealing massive damage to enemies caught in its path.',va:'"Let the dragon consume you!"',ve:'"Ryū ga waga teki wo kurau!" (Japanese)'},
 {k:'Passive',n:'Wall Climb',d:'Hanzo can climb up vertical surfaces.'},
 ],
@@ -593,8 +621,8 @@ ct:{tank:"Zarya's bubbles save allies he is targeting. D.Va's Defense Matrix blo
 ov:"An indirect-fire explosives specialist who dominates chokepoints with arc grenades, disables enemies with Steel Trap, and sends RIP-Tire rolling into fortified positions.",
 ab:[
 {k:'LMB',n:'Frag Launcher',d:'Fires grenades in a lobbing arc that bounce off walls and explode on enemy contact or after a delay.'},
-{k:'Shift',n:'Concussion Mine',d:'Place a mine that launches Junkrat or enemies into the air when detonated. Used for mobility or burst damage.'},
-{k:'E',n:'Steel Trap',d:'Place a trap that immobilizes and deals damage to the first enemy who walks through it.'},
+{k:'Shift',n:'Concussion Mine',d:'Place a mine that launches Junkrat or enemies into the air when detonated. Used for mobility or burst damage.',st:{cd:'8s'}},
+{k:'E',n:'Steel Trap',d:'Place a trap that immobilizes and deals damage to the first enemy who walks through it.',st:{cd:'12s'}},
 {k:'Q',n:'RIP-Tire',u:1,d:'Remotely control an exploding tire, steering it toward enemies and detonating for massive AoE damage.',va:'"Ladies and gentlemen, start your engines!"',ve:'"Fire in the hole!"'},
 {k:'Passive',n:'Total Mayhem',d:'On death, Junkrat drops several live grenades.'},
 ],
@@ -612,8 +640,8 @@ ov:"A crowd-control DPS who freezes individual targets, splits teams with Ice Wa
 ab:[
 {k:'LMB',n:'Endothermic Blaster',d:'Close-range cryo stream that slows then fully freezes enemies who remain in its beam long enough.'},
 {k:'RMB',n:'Icicle',d:'Fire a precise icicle projectile for high single-target damage.'},
-{k:'Shift',n:'Cryo-Freeze',d:'Encase yourself in ice for a brief invulnerability window while healing over time inside.'},
-{k:'E',n:'Ice Wall',d:'Instantly create a wall of ice pillars at a target location, blocking movement and sightlines.'},
+{k:'Shift',n:'Cryo-Freeze',d:'Encase yourself in ice for a brief invulnerability window while healing over time inside.',st:{cd:'12s'}},
+{k:'E',n:'Ice Wall',d:'Instantly create a wall of ice pillars at a target location, blocking movement and sightlines.',st:{cd:'13s'}},
 {k:'Q',n:'Blizzard',u:1,d:'Throw a drone that emits a blizzard, slowing then freezing all enemies in a large area.',va:'"Freeze! Don\'t move!"',ve:'"Dòng zhù! Bù xǔ zǒu!" (Mandarin)'},
 {k:'Passive',n:'Cryo-Shield',d:'Mei passively generates a small amount of overhealth from eliminations.'},
 ],
@@ -633,13 +661,13 @@ ct:{tank:"Reinhardt's barrier blocks her cryo stream. Orisa's Javelin Spin defle
 </script>
 <script id="dps2-data">
 const DPS2=[
-{r:'dps',sr:'Flanker',n:'Pharah',sl:'pharah',nat:'Egypt',fl:'eg',
+{r:'dps',sr:'Recon',n:'Pharah',sl:'pharah',nat:'Egypt',fl:'eg',
 ov:"An aerial rocket launcher who dominates any map where she can access the sky, dealing AoE damage to grouped enemies with near-immunity from all non-hitscan heroes.",
 ab:[
 {k:'LMB',n:'Rocket Launcher',d:'Fire rockets dealing AoE splash damage on impact. No damage falloff on splash — consistent at all ranges.'},
-{k:'Shift',n:'Jump Jet',d:'Propel yourself high into the air to reach elevated positions or escape ground-level threats.'},
-{k:'E',n:'Concussive Blast',d:'Fire a blast that knocks enemies back and launches Pharah in the opposite direction. Excellent for repositioning.'},
-{k:'Q',n:'Barrage',u:1,d:'Unleash a continuous barrage of rockets at the cost of all mobility, dealing massive total damage.',va:'"Rocket Barrage incoming!"',ve:'"Justice rains from above!"'},
+{k:'Shift',n:'Jump Jet',d:'Propel yourself high into the air to reach elevated positions or escape ground-level threats.',st:{cd:'10s'}},
+{k:'E',n:'Concussive Blast',d:'Fire a blast that knocks enemies back and launches Pharah in the opposite direction. Excellent for repositioning.',st:{cd:'10s'}},
+{k:'Q',n:'Barrage',u:1,d:'Unleash a continuous barrage of rockets while retaining limited movement. Explosion damage 25 per rocket.',va:'"Rocket Barrage incoming!"',ve:'"Justice rains from above!"'},
 {k:'Passive',n:'Hover Jets',d:'Hold jump to hover in place and maintain aerial position.'},
 ],
 pk:[
@@ -655,8 +683,8 @@ ct:{tank:"D.Va can fly up and Defense Matrix her rockets. Orisa's Javelin Spin d
 ov:"A close-range shotgun brawler who self-heals through damage, teleports with Shadow Step, and becomes briefly invulnerable with Wraith Form.",
 ab:[
 {k:'LMB',n:'Hellfire Shotguns',d:'Dual automatic shotguns. Massive damage at point-blank, severe falloff at range. Best tank-killing weapon in the game.'},
-{k:'Shift',n:'Wraith Form',d:'Become briefly invulnerable and pass through enemies, dropping all debuffs. Cannot attack while active.'},
-{k:'E',n:'Shadow Step',d:'Teleport to a targeted location within range after a brief cast time.'},
+{k:'Shift',n:'Wraith Form',d:'Become briefly invulnerable and pass through enemies, dropping all debuffs. Cannot attack while active.',st:{cd:'8s'}},
+{k:'E',n:'Shadow Step',d:'Teleport to a targeted location within range after a brief cast time.',st:{cd:'~6s'}},{k:'RMB',n:'Dire Triggers',d:'Base-kit ability (moved from perk): fire a precise long-range shotgun blast. Rewards accuracy at distance.',st:{cd:'6s'}},
 {k:'Q',n:'Death Blossom',u:1,d:'Spin and fire both shotguns in all directions simultaneously for several seconds, dealing massive AoE damage.',va:'"Clearing the area!"',ve:'"DIE! DIE! DIE!"'},
 {k:'Passive',n:'The Reaping',d:'Heal for 35% of all damage dealt to enemies. Provides massive sustain in close-range fights.'},
 ],
@@ -669,13 +697,13 @@ pk:[
 st:"The Reaping passive makes him almost unkillable in sustained close-range brawls — he heals faster than most heroes can damage him when trading shots at melee range. Death Blossom paired with Graviton Surge is one of the most reliable full-team wipe combinations in the game. Shadow Step gives him flanking angles no other close-range hero can access.",
 ct:{tank:"Orisa and Reinhardt endure his close-range pressure with barriers and armor. Zarya's bubbles protect allies he is trying to shotgun.",dps:"Pharah, Widowmaker, and Ashe stay at ranges where his shotguns deal minimal damage. Mei can freeze him completely.",sup:"Sombra's hack disables Wraith Form and Shadow Step — his entire escape and engagement toolkit. Ana's Biotic Grenade cuts off his passive self-heal."}},
 
-{r:'dps',sr:'Recon',n:'Sierra',sl:'sierra',nat:'Unknown',fl:null,isNew:1,season:'S2 · Apr 2026',
+{r:'dps',sr:'Recon',n:'Sierra',sl:'sierra',nat:'Unknown',fl:null,isNew2:1,
 ov:"A grapple-mobile sniper who swings to any surface with her Anchor Drone, auto-tracks low-health enemies through walls with her Recon passive, and bombs corridors with Trailblazer.",
 ab:[
 {k:'LMB',n:'Helix Rifle',d:'Automatic assault weapon that shoots in a spiral pattern, gaining accuracy with sustained fire.'},
-{k:'E',n:'Tracking Shot',d:'Mark an enemy. Helix Rifle shots automatically track the marked target for a brief duration.'},
-{k:'Shift',n:'Anchor Drone',d:'Launch a drone to a surface; reactivate to grapple toward it and swing to any position.'},
-{k:'RMB',n:'Tremor Charge',d:'Throw a charge that creates a shockwave on impact, dealing AoE damage.'},
+{k:'E',n:'Tracking Shot',d:'Mark an enemy. Helix Rifle shots automatically track the marked target for a brief duration.',st:{cd:'5s'}},
+{k:'Shift',n:'Anchor Drone',d:'Launch a drone to a surface; reactivate to grapple toward it and swing to any position.',st:{cd:'15s'}},
+{k:'RMB',n:'Tremor Charge',d:'Throw a charge that creates a shockwave on impact, dealing AoE damage.',st:{cd:'10s'}},
 {k:'Q',n:'Trailblazer',u:1,d:'Deploy the Anchor Drone to fly forward and drop a line of explosive charges across a path.',va:'"Trailblazer deployed!"',ve:'"[Confirm in-game]"'},
 {k:'Passive',n:'Recon',d:'Damaging enemies below half health reveals them through walls for a brief duration.'},
 ],
@@ -688,13 +716,13 @@ pk:[
 st:"Anchor Drone gives her mobility rivaling Tracer and Genji for map traversal, able to reach any surface on any map. Tracking Shot bridges sniper precision with sustained fire, providing a self-assisted aim window. The Recon passive makes her invaluable for team information when harassing low-health targets through walls.",
 ct:{tank:"Sigma and Orisa ignore her poke from distance and deny her sightlines. D.Va's Defense Matrix blocks her projectile fire.",dps:"Reaper, Venture, and Anran can close to her range before she grapples away. Widowmaker out-snipes her during the moments she is stationary.",sup:"Sombra hack grounds her by disabling the Anchor Drone. Ana and Zenyatta can contest her at long range."}},
 
-{r:'dps',sr:'Sharpshooter',n:'Sojourn',sl:'sojourn',nat:'Canada',fl:'ca',
+{r:'dps',sr:'Sharpshooter',n:'Sojourn',sl:'sojourn',pickrate:'low',nat:'Canada',fl:'ca',
 ov:"A self-sufficient hitscan soldier who charges a devastating railgun shot through dealing damage, then fires it for burst-kill potential with Power Slide repositioning.",
 ab:[
 {k:'LMB',n:'Railgun (Auto)',d:'Standard automatic fire that generates railgun energy on every hit.'},
 {k:'RMB',n:'Railgun (Charged)',d:'Release accumulated energy as a high-velocity charged shot. At full charge, one-shots most non-tank heroes.'},
-{k:'Shift',n:'Power Slide',d:'Perform a long sliding dash, which can also launch into a high jump at the end.'},
-{k:'E',n:'Disruptor Shot',d:'Launch an energy shot that traps enemies in a slowing field, dealing damage and generating railgun energy.'},
+{k:'Shift',n:'Power Slide',d:'Perform a long sliding dash, which can also launch into a high jump at the end.',st:{cd:'6s'}},
+{k:'E',n:'Disruptor Shot',d:'Launch an energy shot that traps enemies in a slowing field, dealing damage and generating railgun energy.',st:{cd:'8s'}},
 {k:'Q',n:'Overclock',u:1,d:'For several seconds, the railgun gains infinite charge enabling multiple consecutive one-shot charged shots.',va:'"It\'s go time!"',ve:'"This ends now!"'},
 {k:'Passive',n:'Sharpshooter',d:"Critical hits reduce Power Slide's cooldown, enabling aggressive repositioning."},
 ],
@@ -707,11 +735,11 @@ pk:[
 st:"Her railgun's charged shot can eliminate most heroes in a single hit from full health, making every engagement a kill threat. Power Slide provides aggressive repositioning that also reduces cooldowns on critical hits. Overclock removes the resource constraint for several seconds, enabling a barrage of lethal charged shots.",
 ct:{tank:"D.Va's Defense Matrix absorbs charged shots. Zarya's bubbles save allies from one-shot combos.",dps:"Sombra hack disables Power Slide and Disruptor Shot. Tracer and Genji get inside her accuracy window where auto-fire headshots are harder.",sup:"Kiriko's Suzu can pull a teammate out of a Disruptor Shot before it deals lethal damage. Ana can snipe her from comparable range."}},
 
-{r:'dps',sr:'Sharpshooter',n:'Soldier: 76',sl:'soldier-76',nat:'USA',fl:'us',
+{r:'dps',sr:'Specialist',n:'Soldier: 76',sl:'soldier-76',nat:'USA',fl:'us',
 ov:"The most reliable all-rounder in the game — self-heals with Biotic Field, deals burst damage with Helix Rockets, and auto-aims perfectly during Tactical Visor.",
 ab:[
 {k:'LMB',n:'Heavy Pulse Rifle',d:'Automatic rifle with no special mechanics. Consistent and reliable at all ranges.'},
-{k:'Shift',n:'Sprint',d:'Move at dramatically increased speed in the facing direction. Cancel to stop.'},
+{k:'Shift',n:'Sprint',d:'Move at dramatically increased speed in the facing direction. Can now reload while sprinting (speed bonus reduced 50% during reload). Cancel to stop.'},
 {k:'E',n:'Biotic Field',d:'Deploy a healing station that restores health to Soldier and nearby allies over time.'},
 {k:'RMB',n:'Helix Rockets',d:'Fire a burst of three spiraling rockets that deal AoE damage on a cooldown.'},
 {k:'Q',n:'Tactical Visor',u:1,d:'Equip a targeting visor that auto-aims at all enemies in your line of sight for the duration.',va:'"Tactical Visor activated."',ve:'"I\'ve got you in my sights!"'},
@@ -726,11 +754,11 @@ pk:[
 st:"Biotic Field self-sustain means Soldier: 76 can win extended fights against heroes who must disengage to heal. Tactical Visor turns him into a hitscan auto-win machine — it even tracks through evasive movement, dealing lethal damage to heroes like Dragonblade Genji. His combination of sprint, heals, and burst makes him almost never a bad pick.",
 ct:{tank:"Reinhardt's barrier blocks his entire magazine. Sigma's Kinetic Grasp absorbs extended fire bursts.",dps:"Genji's Deflect sends Helix Rockets back for instant burst damage. Sombra hack removes sprint and Biotic Field. Tracer gets inside his accuracy window.",sup:"Kiriko's Swift Step mobility makes her hard to track during Tactical Visor. Ana and Baptiste contest him at comparable range."}},
 
-{r:'dps',sr:'Flanker',n:'Sombra',sl:'sombra',nat:'Mexico',fl:'mx',
+{r:'dps',sr:'Recon',n:'Sombra',sl:'sombra',nat:'Mexico',fl:'mx',
 ov:"The game's premier disruptor who hacks enemies to disable all their abilities and EMP-resets entire teamfights by simultaneously hacking, destroying shields, and stripping abilities.",
 ab:[
 {k:'LMB',n:'Machine Pistol',d:'Automatic close-range weapon. Low per-shot damage — her primary value is the hack, not raw gunfight output.'},
-{k:'Shift',n:'Hack',d:'Target an enemy to disable all their abilities for several seconds. Requires line-of-sight and a brief cast time.'},
+{k:'Shift',n:'Hack',d:'Target an enemy to disable all their abilities for several seconds. Requires line-of-sight and a brief cast time.',st:{cd:'8s'}},
 {k:'E',n:'Translocator',d:'Throw a beacon; activate to teleport instantly to its location from anywhere on the map.'},
 {k:'RMB',n:'Stealth',d:'Become invisible while moving. Firing, taking damage, or hacking reveals you.'},
 {k:'Q',n:'EMP',u:1,d:'Instantly hack all enemies in a large radius simultaneously, destroying all shields and barriers.',va:'"EMP activated!"',ve:'"¡Apagando las luces!" (Spanish)'},
@@ -745,13 +773,13 @@ pk:[
 st:"Sombra's hack is the most impactful single targeted ability in the game — it removes every ability from a hero for several seconds, neutering tanks, supports, and DPS alike. EMP during a teamfight simultaneously resets enemy abilities, destroys barriers, and allows the team to fight ability-less enemies. Opportunist through-wall vision makes her the best team information gatherer.",
 ct:{tank:"Zarya and Orisa sustain hack windows because their primary weapons still function. Reinhardt can still melee during hack.",dps:"Tracer can chase Sombra through her Translocator with her own Blinks. Genji can deflect her bullets before she gets a hack off.",sup:"Zenyatta's Discord Orb makes her an immediate kill priority. Baptiste's Immortality Field counters her burst elimination combo."}},
 
-{r:'dps',sr:'Specialist',n:'Symmetra',sl:'symmetra',nat:'India',fl:'in',
+{r:'dps',sr:'Specialist',n:'Symmetra',sl:'symmetra',pickrate:'high',nat:'India',fl:'in',
 ov:"A barrier-ignoring beam specialist who controls space with self-tracking Sentry Turrets and provides unique team repositioning with her Teleporter.",
 ab:[
 {k:'LMB',n:'Photon Projector (Beam)',d:'Short-range auto-locking beam that scales in damage over time, up to three times its base damage. Ignores barriers.'},
 {k:'RMB',n:'Photon Projector (Orb)',d:'Fire a slow-moving ball of energy that passes through barriers and explodes on contact.'},
-{k:'Shift',n:'Sentry Turret',d:'Place a small turret that auto-targets and slows enemies. Holds up to 3 active turrets.'},
-{k:'E',n:'Teleporter',d:'Deploy a teleporter exit at a target location. The entrance spawns at your position. All allies can use it.'},
+{k:'Shift',n:'Sentry Turret',d:'Place a small turret that auto-targets and slows enemies. Holds up to 3 active turrets.',st:{cd:'10s'}},
+{k:'E',n:'Teleporter',d:'Deploy a teleporter exit at a target location. The entrance spawns at your position. All allies can use it.',st:{cd:'15s'}},
 {k:'Q',n:'Photon Barrier',u:1,d:'Create a large moving barrier that crosses the entire map, blocking all incoming fire along its path.',va:'"Reality bends to my will!"',ve:'"Yahi param vāstavikatā hai!" (Hindi)'},
 {k:'Passive',n:'Architech',d:"Symmetra's primary beam ignores all barriers entirely."},
 ],
@@ -764,13 +792,13 @@ pk:[
 st:"Photon Projector at full charge deals more DPS than most heroes while requiring zero aim — she simply needs to maintain beam contact. Teleporter is the only ability in the game enabling team-wide instant repositioning, enabling creative flanks and surprise angles. Sentry Turrets act as motion sensors and slow fields that give advance warning of incoming flanks.",
 ct:{tank:"D.Va's Defense Matrix blocks her orbs but not her beam. Wrecking Ball can knock over all her turrets quickly.",dps:"Reaper, Tracer, and Genji dodge in and destroy her turrets before engaging. Sombra hack disables beam, orbs, and teleporter simultaneously.",sup:"Kiriko's mobility makes her extremely hard to maintain beam contact on. Ana can sleep Symmetra before her beam reaches full charge."}},
 
-{r:'dps',sr:'Specialist',n:'Torbjörn',sl:'torbjorn',nat:'Sweden',fl:'se',
+{r:'dps',sr:'Specialist',n:'Torbjörn',sl:'torbjorn',pickrate:'high',nat:'Sweden',fl:'se',
 ov:"A zone-denial engineer whose self-tracking turret punishes enemies in chokepoints while Molten Core lays impassable lava pools and Overload turns him into a frontline duelist.",
 ab:[
 {k:'LMB',n:'Rivet Gun (Auto)',d:'Short-range burst fire. Excellent DPS in tight spaces.'},
 {k:'RMB',n:'Rivet Gun (Slug)',d:'High-damage single slug shot with more range. Punishes exposed enemies.'},
-{k:'Shift',n:'Forge Hammer',d:'Melee attack used offensively or to repair the turret.'},
-{k:'E',n:'Deploy Turret',d:'Place a turret that autonomously tracks and shoots enemies. Levels up over time.'},
+{k:'Shift',n:'Forge Hammer',d:'Melee attack used offensively or to repair the turret.',st:{cd:'—'}},
+{k:'E',n:'Deploy Turret',d:'Place a turret that autonomously tracks and shoots enemies. Levels up over time.',st:{cd:'15s'}},
 {k:'Q',n:'Molten Core',u:1,d:'Overload yourself with power and deploy pools of molten slag that slow and damage enemies in corridors.',va:'"Setting up the welcome mat."',ve:'"MOLTEN CORE!"'},
 {k:'Passive',n:'Overload',d:'Getting kills or assists briefly grants Torbjörn bonus armor and fire rate.'},
 ],
@@ -788,7 +816,7 @@ ov:"The iconic harassment flanker who blinks around at extreme speed, rewinds he
 ab:[
 {k:'LMB',n:'Pulse Pistols',d:'Dual automatic pistols with very short effective range but high DPS up close.'},
 {k:'Shift',n:'Blink',d:'Teleport a short distance in your movement direction. Holds up to 3 charges, recharged over time.'},
-{k:'E',n:'Recall',d:'Rewind your position, health, and ammo to 3 seconds ago. Drops all debuffs.'},
+{k:'E',n:'Recall',d:'Rewind your position, health, and ammo to 3 seconds ago. Drops all debuffs.',st:{cd:'12s'}},
 {k:'Q',n:'Pulse Bomb',u:1,d:'Throw a sticky bomb that adheres to enemies or surfaces, then detonates for massive damage.',va:'"Alright! / Special Delivery! / Wingin\' it!"',ve:'"Alright! / Special Delivery! / Wingin\' it!"'},
 {k:'Passive',n:'Speedy',d:'Tracer moves at 6m/s base, faster than most heroes even without Blink.'},
 ],
@@ -801,13 +829,13 @@ pk:[
 st:"Recall is one of the most powerful panic buttons in the game — she can negate any burst combo from the last 3 seconds, including sleep darts, hooks, and burst damage windows. Three Blink charges mean she can dodge in three different directions in under a second. Pulse Bomb deals enough damage to instantly eliminate most supports and lower-health DPS heroes.",
 ct:{tank:"Zarya's bubble saves allies she is trying to burst. Wrecking Ball's Piledriver can knock her airborne and interrupt her attacks.",dps:"Brigitte is her dedicated counter — armor absorbs burst, Shield Bash interrupts Recall timing, Rally health negates her damage windows. Cassidy's Magnetic Grenade tracks through Blinks.",sup:"Moira's drain beam and Zenyatta's orb-charged shots track her through Blinks. Ana's Sleep Dart catches her when she briefly pauses after a Recall."}},
 
-{r:'dps',sr:'Flanker',n:'Vendetta',sl:'vendetta',nat:'Italy',fl:'it',isNew:1,season:'S20 · Dec 2025',
+{r:'dps',sr:'Flanker',n:'Vendetta',sl:'vendetta',nat:'Italy',fl:'it',
 ov:"The game's only melee DPS — a gladiatorial swordswoman who chains devastating combo attacks, bypasses tank damage reduction with overhead strikes, and blocks with Warding Stance.",
 ab:[
 {k:'LMB',n:'Overhead Strike',d:'Heavy overhead sword swing. Deals massive damage and bypasses tank damage reduction entirely.'},
 {k:'RMB',n:'Slash',d:'Rapid horizontal slash. Faster cooldown, part of the three-hit combo sequence.'},
-{k:'Shift',n:'Whirlwind Dash',d:'Spin forward through enemies, damaging all hit along the path.'},
-{k:'E',n:'Soaring Slice',d:'Throw the sword blade and fly to its location, enabling gap-closing and unique aerial angles.'},
+{k:'Shift',n:'Whirlwind Dash',d:'Spin forward through enemies, damaging all hit along the path.',st:{cd:'6s'}},
+{k:'E',n:'Soaring Slice',d:'Throw the sword blade and fly to its location, enabling gap-closing and unique aerial angles.',st:{cd:'8s'}},
 {k:'Hold RMB',n:'Warding Stance',d:'Enter a blocking stance that absorbs frontal projectile and melee damage. Completely nullifies enemy melee attacks.'},
 {k:'Q',n:'Sundering Blade',u:1,d:'Charge and release a massive energy blade strike that pierces barriers, damage reduction, and shields.',va:'"Sundering Blade!"',ve:'"[Confirm in-game]"'},
 {k:'Passive',n:'Onslaught',d:'Striking enemies increases attack and movement speed, stacking up to a maximum.'},
@@ -821,12 +849,12 @@ pk:[
 st:"Her overhead swing bypasses tank damage reduction entirely — the only damage ability in the game that does so — making her uniquely threatening to even the most fortified targets. Onslaught stacks transform her into an increasingly faster killing machine the longer she stays in combat. Warding Stance lets her block incoming melee from heroes like Reinhardt and Doomfist, completely negating their primary damage.",
 ct:{tank:"Orisa's javelin, Doomfist's Power Block, and Reinhardt's Charge can interrupt her approach. Wrecking Ball's Piledriver launches her airborne and resets her Onslaught stacks.",dps:"Pharah and Echo stay airborne outside her melee range entirely. Sombra hack disables Warding Stance and Soaring Slice. Mei's freeze stops her completely.",sup:"Ana's Biotic Grenade prevents her Overhead Lifesteal from healing. Kiriko's Suzu can cleanse teammates mid-combo. Mizuki's Binding Chain tethers and hinders her approach."}},
 
-{r:'dps',sr:'Flanker',n:'Venture',sl:'venture',nat:'Canada',fl:'ca',isNew:1,season:'S10 · Apr 2024',
+{r:'dps',sr:'Flanker',n:'Venture',sl:'venture',nat:'Canada',fl:'ca',season:'S10 · Apr 2024',
 ov:"A close-range DPS who burrows underground for invulnerability, then emerges with Drill Dash to send enemies flying, and shocks wide areas with Tectonic Shock.",
 ab:[
 {k:'LMB',n:'Smart Excavator',d:'Fire a seismic projectile that bursts after a short distance, dealing AoE damage on impact.'},
-{k:'Shift',n:'Drill Dash',d:'Spring forward in facing direction, damaging and knocking back enemies hit.'},
-{k:'E',n:'Burrow',d:'Burrow underground, becoming invulnerable and moving freely. Emerge to deal AoE damage and knock enemies upward.'},
+{k:'Shift',n:'Drill Dash',d:'Spring forward in facing direction, damaging and knocking back enemies hit.',st:{cd:'5s'}},
+{k:'E',n:'Burrow',d:'Burrow underground, becoming invulnerable and moving freely. Emerge to deal AoE damage and knock enemies upward.',st:{cd:'8s'}},
 {k:'RMB',n:'Clobber',d:'Enhanced melee attack that deals significantly increased damage. Used to combo after Burrow emerge.'},
 {k:'Q',n:'Tectonic Shock',u:1,d:'Send shockwaves through the ground across a wide area, dealing heavy damage to enemies along the path.',va:'"Time to shake things up!"',ve:'"Tectonic Shock!"'},
 {k:'Passive',n:"Explorer's Resolve",d:"Using abilities generates temporary shields. Clobber deals significantly more damage than standard melee."},
@@ -845,8 +873,8 @@ ov:"The best long-range sniper in the game whose fully-charged shot instantly el
 ab:[
 {k:'LMB (Scoped)',n:"Widow's Kiss",d:'Charge and release for a high-velocity sniper shot. Fully-charged headshot eliminates most non-tank heroes instantly.'},
 {k:'LMB (Auto)',n:"Widow's Kiss (Auto)",d:'Automatic carbine fire for close-range encounters. Weaker than other heroes up close.'},
-{k:'Shift',n:'Grappling Hook',d:'Launch a grappling hook at a surface to reposition to any location within range.'},
-{k:'E',n:'Venom Mine',d:'Place a proximity mine that poisons enemies who trigger it, revealing their position.'},
+{k:'Shift',n:'Grappling Hook',d:'Launch a grappling hook at a surface to reposition to any location within range.',st:{cd:'8s'}},
+{k:'E',n:'Venom Mine',d:'Place a proximity mine that poisons enemies who trigger it, revealing their position.',st:{cd:'15s'}},
 {k:'Q',n:'Infra-Sight',u:1,d:"Activate a recon visor that reveals all enemies through walls for your entire team's duration.",va:'"No one can hide from my sight."',ve:'"Personne n\'échappe à mon regard." (French)'},
 {k:'Passive',n:"Widow's Kiss",d:"Widowmaker's resting heart rate has been slowed, allowing faster charge of her sniper rifle."},
 ],
@@ -870,8 +898,8 @@ const SUPPORTS=[
 ov:"The highest-impact support in skilled hands — her Biotic Grenade applies anti-heal, Sleep Dart provides crucial crowd control, and Nano Boost supercharges an ally as a teamfight trigger.",
 ab:[
 {k:'LMB',n:'Biotic Rifle',d:'Precision scoped rifle. Heals allies with direct hits; deals damage and applies anti-heal to enemies with direct hits.'},
-{k:'Shift',n:'Sleep Dart',d:"Fire a dart that puts the first enemy hit to sleep for several seconds. Any damage wakes them up early."},
-{k:'E',n:'Biotic Grenade',d:'Throw a grenade that heals allies and applies anti-heal to all enemies hit, preventing any healing for several seconds.'},
+{k:'Shift',n:'Sleep Dart',d:"Fire a dart that puts the first enemy hit to sleep for several seconds. Any damage wakes them up early.",st:{cd:'12s'}},
+{k:'E',n:'Biotic Grenade',d:'Throw a grenade that heals allies and applies anti-heal to all enemies hit, preventing any healing for several seconds.',st:{cd:'12s'}},
 {k:'Q',n:'Nano Boost',u:1,d:'Supercharge an ally with increased damage output and reduced damage taken for several seconds.',va:'"You are powered up, get in there!"',ve:'"Nano boost administered!" / "Warihum quwitak!" (Arabic)'},
 {k:'Passive',n:'Tactician',d:'Store excess ultimate charge beyond 100%.'},
 ],
@@ -884,13 +912,13 @@ pk:[
 st:"Biotic Grenade is the single most impactful non-ultimate ability in the game — anti-heal strips self-sustaining tanks and makes them trivially easy to kill. Sleep Dart is a powerful panic button that can stop channeled ultimates like Dragonblade or Whole Hog mid-animation. Nano Boost's amplification functions as a fight-starting signal that coordinates the entire team.",
 ct:{tank:"Dive tanks like Winston and Doomfist close the gap before she can react. Her limited mobility makes her vulnerable to any fast-moving hero.",dps:"Genji can Deflect her Biotic Rifle shots back at her. Tracer can harass her relentlessly. Sombra hack removes all her abilities simultaneously.",sup:"Kiriko's Suzu cleanses Biotic Grenade applied to allies. Moira's Fade lets her escape Sleep Dart windows easily."}},
 
-{r:'sup',sr:'Medic',n:'Baptiste',sl:'baptiste',nat:'Haiti',fl:'ht',
+{r:'sup',sr:'Tactician',n:'Baptiste',sl:'baptiste',pickrate:'low',nat:'Haiti',fl:'ht',
 ov:"A flexible combat medic who prevents deaths with Immortality Field, doubles damage and healing through Amplification Matrix, and reaches any high ground with Exo Boots.",
 ab:[
 {k:'LMB',n:'Biotic Launcher (Burst)',d:'Three-round burst weapon. High damage output for a support hero.'},
 {k:'RMB',n:'Biotic Launcher (Heal)',d:'Fire a healing projectile that heals any ally it contacts. Requires aim.'},
-{k:'Shift',n:'Immortality Field',d:"Deploy a device that prevents allies from falling below 20% health for its duration. Enemies can destroy the device."},
-{k:'E',n:'Regenerative Burst',d:'Trigger a burst of healing that heals Baptiste and nearby allies over time.'},
+{k:'Shift',n:'Immortality Field',d:"Deploy a device that prevents allies from falling below 20% health for its duration. Enemies can destroy the device.",st:{cd:'25s'}},
+{k:'E',n:'Regenerative Burst',d:'Trigger a burst of healing that heals Baptiste and nearby allies over time.',st:{cd:'15s'}},
 {k:'Q',n:'Amplification Matrix',u:1,d:'Create a large flat matrix that doubles the damage and healing of any projectiles passing through it.',va:'"Light them up!"',ve:'"Vide bal sou yo!" (Haitian Creole)'},
 {k:'Passive',n:'Exo Boots',d:'Crouch then jump to propel significantly higher than normal, reaching elevated positions.'},
 ],
@@ -907,10 +935,10 @@ ct:{tank:"Doomfist and Wrecking Ball can reach him before Exo Boots get him to s
 ov:"The best anti-flanker support who inspires nearby allies with passive healing through Inspire, pushes enemies away with Shield Bash and Whip Shot, and rallies the team with Rally.",
 ab:[
 {k:'LMB',n:'Rocket Flail',d:'Close-range melee attack with extended reach. Activates the Inspire passive for nearby allies.'},
-{k:'RMB',n:'Barrier Shield',d:'Hold to deploy a frontal barrier that absorbs damage.'},
-{k:'Shift',n:'Shield Bash',d:'While Barrier Shield is raised, dash forward to stun an enemy on contact.'},
-{k:'E',n:'Whip Shot',d:'Throw the flail forward at an enemy, dealing damage and knocking them back significantly.'},
-{k:'F',n:'Repair Pack',d:'Throw a repair pack to an ally, healing them. Overheals as armor if above max health.'},
+{k:'RMB',n:'Barrier Shield',d:'Hold to deploy a frontal barrier that absorbs damage (300 HP).'},
+{k:'Shift',n:'Shield Bash',d:'While Barrier Shield is raised, dash forward to stun an enemy on contact.',st:{cd:'7s'}},
+{k:'E',n:'Whip Shot',d:'Throw the flail forward at an enemy, dealing damage and knocking them back significantly.',st:{cd:'4s'}},
+{k:'F',n:'Repair Pack',d:'Throw a repair pack to an ally, healing them. Overheals as armor if above max health.',st:{cd:'5s'}},
 {k:'Q',n:'Rally',u:1,d:'Move faster and provide all nearby allies with armor that builds up over time.',va:'"Rally to me!"',ve:'"Alla till mig!" (Swedish)'},
 {k:'Passive',n:'Inspire',d:'Dealing damage with Rocket Flail or Whip Shot activates Inspire, passively healing nearby allies for a duration.'},
 ],
@@ -923,13 +951,13 @@ pk:[
 st:"Brigitte is specifically designed to counter dive and flanker heroes — Inspire provides passive AoE healing to frontline allies without needing to aim, while Shield Bash interrupts Genji's Dragonblade and Tracer's Recall timing. Repair Pack overheals as armor, giving key allies extra effective health. Rally's armor is additive and powerful for sustained brawl pushing.",
 ct:{tank:"Reinhardt and Sigma's range completely neutralizes her melee threat. Orisa's Fortify protects her from Shield Bash interrupts.",dps:"Pharah, Widowmaker, and Hanzo stay outside her melee range entirely. Sombra hack strips all her abilities and prevents Inspire.",sup:"Ana's Biotic Grenade prevents Inspire's healing during the anti-heal window. Zenyatta's long-range Discord Orb punishes her need to stay close."}},
 
-{r:'sup',sr:'Medic',n:'Illari',sl:'illari',nat:'Peru',fl:'pe',isNew:1,season:'S6 · Aug 2023',
+{r:'sup',sr:'Survivor',n:'Illari',sl:'illari',nat:'Peru',fl:'pe',
 ov:"An offensive support whose railgun damage rivals DPS heroes, Healing Pylon provides passive team healing, and Captive Sun marks enemies for devastating detonation.",
 ab:[
 {k:'LMB',n:'Solar Rifle (Auto)',d:'Automatic mid-range rifle. Strong sustained damage output for a support hero.'},
 {k:'RMB',n:'Solar Rifle (Charged)',d:'Charge and release a precision healing shot that heals allies on direct hit.'},
-{k:'Shift',n:'Outburst',d:'Propel yourself in any direction and push away nearby enemies.'},
-{k:'E',n:'Healing Pylon',d:"Deploy a pylon that passively heals allies within its range. Enemies can destroy it."},
+{k:'Shift',n:'Outburst',d:'Propel yourself in any direction and push away nearby enemies.',st:{cd:'6s'}},
+{k:'E',n:'Healing Pylon',d:"Deploy a pylon that passively heals allies within its range. Enemies can destroy it.",st:{cd:'20s'}},
 {k:'Q',n:'Captive Sun',u:1,d:'Launch a ball of solar energy that slows enemies hit, marking them to explode on taking additional damage.',va:'"Face the sunrise!"',ve:'"¡Inti lluqsimun!" (Quechua)'},
 {k:'Passive',n:'Solar Embrace',d:'Illari generates solar energy passively over time that charges her Solar Rifle.'},
 ],
@@ -942,12 +970,12 @@ pk:[
 st:"Her auto rifle damage can contest DPS heroes while Pylon simultaneously manages healing, freeing her to play aggressively. Captive Sun's marked detonation creates a second kill window after initial damage — any follow-up from teammates instantly triggers the explosion on marked enemies. High solo-carry potential compared to most support heroes.",
 ct:{tank:"Reinhardt and Orisa close distance quickly. Dive tanks (Winston, Doomfist) threaten her before Outburst escapes.",dps:"Tracer and Sombra can flank around or destroy the Healing Pylon. Widowmaker contests her at the same sniper range.",sup:"Ana can snipe her at comparable range. Sombra hack removes Outburst movement and disables Pylon during the hack duration."}},
 
-{r:'sup',sr:'Tactician',n:'Jetpack Cat',sl:'jetpack-cat',nat:'Unknown',fl:null,isNew:1,season:'S1 · Feb 2026',
+{r:'sup',sr:'Tactician',n:'Jetpack Cat',sl:'jetpack-cat',nat:'Unknown',fl:null,
 ov:"The only hero with permanent passive flight — a support who heals teammates at range, tows allies through the air with Lifeline, and stores excess ultimate charge as a Tactician.",
 ab:[
 {k:'LMB',n:'Claw Blasters',d:'Automatic ranged weapon. Deals competitive damage for a support hero while airborne.'},
-{k:'Shift',n:'Lifeline',d:'Tether an ally and tow them through the air while healing them, enabling dramatic mid-fight repositioning.'},
-{k:'E',n:'Scratch Attack',d:'Dash forward with a slashing melee that deals damage and briefly reveals enemy positions.'},
+{k:'Shift',n:'Lifeline',d:'Tether an ally and tow them through the air while healing them, enabling dramatic mid-fight repositioning.',st:{cd:'12s'}},
+{k:'E',n:'Scratch Attack',d:'Dash forward with a slashing melee that deals damage and briefly reveals enemy positions.',st:{cd:'8s'}},
 {k:'Q',n:'Aerial Barrage',u:1,d:'Release a concentrated aerial bombardment across a large area beneath Jetpack Cat.',va:'"Aerial Barrage deployed!"',ve:'"[Confirm in-game]"'},
 {k:'Passive',n:'Permanent Flight',d:'Jetpack Cat permanently hovers in the air, completely avoiding all ground-level threats. Tactician: Stores excess ultimate charge.'},
 ],
@@ -960,13 +988,13 @@ pk:[
 st:"Permanent passive flight makes Jetpack Cat immune to all ground-based threats — sweepers, slows, hooks, and melee heroes cannot reach her. Lifeline's tow can save an ally from a hook, a Death Blossom, or any ground-level threat in a single moment. Her Tactician passive allows banking ultimate charge, making critical ultimates available sooner.",
 ct:{tank:"Mauga and Domina have long-range primary fire that can threaten her aerial position. Winston can jump to her height and deal damage.",dps:"Hitscan heroes — Soldier: 76, Ashe, Cassidy, and Emre — easily track her predictable aerial position. Widowmaker can snipe her while she hovers.",sup:"Ana can snipe her from range since she is a stationary aerial target. Baptiste's burst damage can chip her down effectively."}},
 
-{r:'sup',sr:'Survivor',n:'Juno',sl:'juno',nat:'Mars (Vietnamese descent)',fl:null,isNew:1,season:'S12 · Aug 2024',
+{r:'sup',sr:'Survivor',n:'Juno',sl:'juno',nat:'Mars (Vietnamese descent)',fl:null,
 ov:"An extremely mobile support who grants speed boosts through Hyper Ring, heals and damages with homing Pulsar Torpedoes, and emboldens the whole team with Orbital Ray.",
 ab:[
 {k:'LMB',n:'Mediblaster',d:'Automatic mid-range weapon that deals damage to enemies and heals allies on direct hit.'},
-{k:'Shift',n:'Glide Boost',d:'Propel forward with a rocket boost. Activates passive regeneration as a Survivor passive.'},
-{k:'E',n:'Pulsar Torpedoes',d:'Launch homing torpedoes that target allies to heal or enemies to damage — split as needed between targets.'},
-{k:'RMB',n:'Hyper Ring',d:'Toss a ring that grants any ally passing through it a significant movement speed boost for several seconds.'},
+{k:'Shift',n:'Glide Boost',d:'Propel forward with a rocket boost (40% speed bonus). Activates passive regeneration as a Survivor passive.'},
+{k:'E',n:'Pulsar Torpedoes',d:'Launch homing torpedoes that target allies to heal or enemies to damage — split as needed between targets.',st:{cd:'10s'}},
+{k:'RMB',n:'Hyper Ring',d:'Toss a ring that grants any ally passing through it a significant movement speed boost for several seconds.',st:{cd:'12s'}},
 {k:'Q',n:'Orbital Ray',u:1,d:'Bathe allies in a beam from orbit, healing them and boosting their damage output for its duration.',va:'"Welcome to orbit!"',ve:'"Locking satellite vector!"'},
 {k:'Passive',n:'Martian Overboots',d:'Juno can double-jump. Movement abilities start passive health regeneration (Survivor).'},
 ],
@@ -982,10 +1010,10 @@ ct:{tank:"Dive tanks (D.Va, Winston, Genji) close the gap before she can Glide B
 {r:'sup',sr:'Medic',n:'Kiriko',sl:'kiriko',nat:'Japan',fl:'jp',
 ov:"One of the strongest supports at all levels — Suzu cleanses virtually any debuff, Swift Step teleports to any ally through walls, and Kitsune Rush dramatically boosts the entire team.",
 ab:[
-{k:'LMB',n:'Healing Ofuda',d:'Throw healing talismans at allies. Requires directional aim toward allies.'},
+{k:'LMB',n:'Healing Ofuda',d:'Throw healing talismans at allies. Requires directional aim toward allies. (7 per second fire rate.)'},
 {k:'RMB',n:'Kunai',d:'Throw three kunai in a fan spread. High headshot damage makes her lethal on key targets.'},
-{k:'Shift',n:'Swift Step',d:'Teleport directly to a targeted ally through any terrain, including walls and floors.'},
-{k:'E',n:'Protection Suzu',d:'Throw a suzu that cleanses virtually any debuff from nearby allies — anti-heal, sleep, freeze, hack, and many ult effects.'},
+{k:'Shift',n:'Swift Step',d:'Teleport directly to a targeted ally through any terrain, including walls and floors (range: 30m).',st:{cd:'7s'}},
+{k:'E',n:'Protection Suzu',d:'Throw a suzu that cleanses virtually any debuff from nearby allies — anti-heal, sleep, freeze, hack, and many ult effects.',st:{cd:'14s'}},
 {k:'Q',n:'Kitsune Rush',u:1,d:"Summon a kitsune spirit that grants nearby allies dramatically increased movement speed, attack speed, and reduced cooldowns.",va:'"Let the Kitsune guide you!"',ve:'"Kitsune no kagizume wo tokihanate!" (Japanese)'},
 {k:'Passive',n:'Wall Climb',d:'Kiriko can climb vertical surfaces.'},
 ],
@@ -998,13 +1026,13 @@ pk:[
 st:"Suzu cleanses virtually every debuff in the game — it can remove anti-heal from Ana's grenade, freeze from Mei, sleep, hack from Sombra, and even cleanse teammates caught in Gravitic Flux mid-ult. Swift Step teleports through any terrain to save allies from flankers or perilous positions. Kitsune Rush's combined attack speed, movement speed, and cooldown reduction makes it one of the most impactful teamfight ultimates in the game.",
 ct:{tank:"Reinhardt and Orisa's range means she needs to expose herself to heal them. Roadhog can hook her out of a Swift Step she is beginning.",dps:"Sombra hack grounds her by disabling Swift Step and wall climb. High-burst DPS (Sojourn, Vendetta) kill allies before she can Suzu them.",sup:"Ana can snipe her at range. Moira's orb chip damage makes her a constant healing drain that requires continuous attention."}},
 
-{r:'sup',sr:'Medic',n:'Lifeweaver',sl:'lifeweaver',nat:'Thailand',fl:'th',isNew:1,season:'S4 · Apr 2023',
+{r:'sup',sr:'Medic',n:'Lifeweaver',sl:'lifeweaver',nat:'Thailand',fl:'th',
 ov:"A repositioning specialist who pulls allies from danger with Life Grip, creates on-demand high ground with Petal Platform, and deploys a massive healing totem with Tree of Life.",
 ab:[
 {k:'LMB',n:'Thorn Volley',d:'Fire a burst of thorns. Automatic with reasonable damage for a support hero.'},
-{k:'RMB',n:'Healing Blossom',d:'Charge and release a healing shot that heals a targeted ally. Requires aim.'},
-{k:'Shift',n:'Petal Platform',d:'Create an ascending platform that carries allies upward to reach elevated positions.'},
-{k:'E',n:'Life Grip',d:"Encase an ally in a protective cocoon and pull them to your location, saving them from danger."},
+{k:'RMB',n:'Healing Blossom',d:'Charge and release a healing shot that heals a targeted ally. Requires aim. (Max 90 healing per shot.)'},
+{k:'Shift',n:'Petal Platform',d:'Create an ascending platform that carries allies upward to reach elevated positions.',st:{cd:'14s'}},
+{k:'E',n:'Life Grip',d:"Encase an ally in a protective cocoon and pull them to your location, saving them from danger. Now cleanses all debuffs on the pulled ally.",st:{cd:'11s'}},
 {k:'F',n:'Parting Gift',d:'On death, Lifeweaver drops a gift that heals the first ally who picks it up.'},
 {k:'Q',n:'Tree of Life',u:1,d:'Plant a large tree that heals allies around it for its duration. Tree has significant health and blocks movement.',va:'"Life protects life!"',ve:'"Chīwit bpkpong chīwit!" (Thai)'},
 {k:'Passive',n:'Parting Gift',d:'Drop a healing gift on death.'},
@@ -1018,13 +1046,13 @@ pk:[
 st:"Life Grip is the only ability in the game that can physically relocate an allied hero, enabling saves from hooks, Death Blossoms, Dragonblades, and other kill combos that would otherwise be unavoidable. Petal Platform creates instant high-ground access on any map without needing ramps or staircases. Tree of Life's large health pool means it sustains the team through prolonged pushes.",
 ct:{tank:"Wrecking Ball can knock allies off Petal Platform. Reinhardt's barriers deny his angle on Life Gripping targets.",dps:"Sombra hack nullifies Life Grip and Petal Platform. Reaper, Tracer, and Genji can dive and eliminate him quickly since he lacks mobility.",sup:"Ana and Zenyatta can deal with him from long range where his healing blossom requires careful aim. His raw healing output is lower than most supports."}},
 
-{r:'sup',sr:'Medic',n:'Lúcio',sl:'lucio',nat:'Brazil',fl:'br',
+{r:'sup',sr:'Tactician',n:'Lúcio',sl:'lucio',nat:'Brazil',fl:'br',
 ov:"A mobile support whose passive Crossfade heals or speeds up all nearby allies with no aim required, and whose Sound Barrier ultimate counters many teamfight ultimates with massive team-wide shielding.",
 ab:[
 {k:'LMB',n:'Sonic Amplifier',d:'Fire a burst of sound energy projectiles. Reasonable damage at medium range.'},
-{k:'RMB',n:'Soundwave',d:'Blast nearby enemies back with a sound wave. Useful for knocking enemies off high ground or away from allies.'},
+{k:'RMB',n:'Soundwave',d:'Blast nearby enemies back with a sound wave. Useful for knocking enemies off high ground or away from allies.',st:{cd:'4s'}},
 {k:'Shift',n:'Crossfade',d:'Switch between Heal Song (passive AoE healing for nearby allies) and Speed Song (passive AoE movement speed boost). No aim required.'},
-{k:'E',n:'Amp It Up',d:"Greatly amplify the current Crossfade song's effect for a short duration."},
+{k:'E',n:'Amp It Up',d:"Greatly amplify the current Crossfade song's effect for a short duration.",st:{cd:'10s'}},
 {k:'Q',n:'Sound Barrier',u:1,d:'Instantly provide all nearby allies with a large temporary shield that decays over time.',va:'"Oh, let\'s break it down!"',ve:'"Vamos esculachar!" (Portuguese)'},
 {k:'Passive',n:'Wall Ride',d:'Lúcio can ride along any wall surface, maintaining momentum and enabling creative movement paths.'},
 ],
@@ -1040,11 +1068,11 @@ ct:{tank:"Reinhardt's melee reach covers his Wall Ride paths on enclosed maps. O
 {r:'sup',sr:'Medic',n:'Mercy',sl:'mercy',nat:'Switzerland',fl:'ch',
 ov:"A dedicated pocket healer with the highest single-target heal rate in the game who damage-boosts allies by 30%, Resurrects dead teammates, and flies between allies with Guardian Angel.",
 ab:[
-{k:'LMB',n:'Caduceus Staff (Heal)',d:"Tether to an ally and continuously heal them at the highest per-second heal rate in the game."},
+{k:'LMB',n:'Caduceus Staff (Heal)',d:"Tether to an ally and continuously heal them at 55 HP per second."},
 {k:'RMB',n:'Caduceus Staff (Boost)',d:'Tether to an ally and amplify their damage output by 30%.'},
-{k:'Shift',n:'Guardian Angel',d:'Dash rapidly toward a targeted ally. Can be aimed to achieve significant horizontal or vertical movement.'},
-{k:'E',n:'Resurrect',d:'Channel briefly to revive a recently-dead ally with full health at their death location.'},
-{k:'F',n:'Flash Heal',d:"Fire a quick burst of healing toward a nearby ally. Instant-cast self-heal or ally heal in base kit."},
+{k:'Shift',n:'Guardian Angel',d:'Dash rapidly toward a targeted ally. Can be aimed to achieve significant horizontal or vertical movement.',st:{cd:'2.5s'}},
+{k:'E',n:'Resurrect',d:'Channel briefly to revive a recently-dead ally with full health at their death location.',st:{cd:'30s'}},
+{k:'F',n:'Flash Heal',d:"Instant-cast heal for self or a nearby ally. 60 HP base (120 HP on targets below 50% health). 12s cooldown.",st:{cd:'12s'}},
 {k:'Q',n:'Valkyrie',u:1,d:'Fly freely, enhance all abilities, enable multi-target tethering, and Resurrect without channeling.',va:'"Heroes never die!"',ve:'"Helden sterben nicht!" (German)'},
 {k:'Passive',n:'Angelic Descent',d:'Mercy falls very slowly while not grounded, enabling vertical positioning.'},
 ],
@@ -1057,13 +1085,13 @@ pk:[
 st:"The 30% Damage Boost multiplied by a consistent beam hero (Pharah, Bastion, Hanzo) creates output that exceeds what either hero could produce alone — Pharmercy in particular is a self-sustaining threat. Resurrect reverses a fight-losing death at any moment and can be used freely during Valkyrie. Guardian Angel's angular mobility makes her one of the hardest supports to eliminate when played well.",
 ct:{tank:"Doomfist and Wrecking Ball can leap directly to her before Guardian Angel gets her to safety. Roadhog can hook her mid-dash.",dps:"Sombra hack disables Resurrect and Guardian Angel simultaneously. Tracer and Genji hunt her during Guardian Angel animations. Widowmaker snipes her before she can dash.",sup:"Ana's Biotic Grenade prevents both her healing output and self-healing. Kiriko's Suzu can save allies she is attempting to Resurrect before the channel completes."}},
 
-{r:'sup',sr:'Medic',n:'Mizuki',sl:'mizuki',nat:'Japan',fl:'jp',isNew:1,season:'S1 · Feb 2026',
+{r:'sup',sr:'Survivor',n:'Mizuki',sl:'mizuki',nat:'Japan',fl:'jp',
 ov:"An aggressive frontline support whose Remedy Aura heals passively at close range, Binding Chain grounds mobile enemies, and Kekkai Sanctuary absorbs projectile ultimates for allies inside.",
 ab:[
 {k:'LMB',n:'Spirit Glaive',d:'Throw a spinning blade that bounces off walls and deals rapid damage on contact. Can hit enemies around corners.'},
-{k:'Shift',n:'Healing Kasa',d:'Throw your hat to heal an ally. It bounces to nearby allies and heals Mizuki when it returns.'},
-{k:'E',n:'Binding Chain',d:'Launch a tethering chain that hinders the first enemy hit, limiting their movement and grounding airborne heroes.'},
-{k:'RMB',n:'Katashiro Return',d:'Leap forward, leaving behind a paper doll. Reactivate to return to its location with increased movement speed.'},
+{k:'Shift',n:'Healing Kasa',d:'Throw your hat to heal an ally. It bounces to nearby allies and heals Mizuki when it returns.',st:{cd:'8s'}},
+{k:'E',n:'Binding Chain',d:'Launch a tethering chain that hinders the first enemy hit, limiting their movement and grounding airborne heroes.',st:{cd:'8s'}},
+{k:'RMB',n:'Katashiro Return',d:'Leap forward, leaving behind a paper doll. Reactivate to return to its location with 30% increased movement speed.',st:{cd:'8s'}},
 {k:'Q',n:'Kekkai Sanctuary',u:1,d:'Create a sanctuary zone that heals allies and absorbs all incoming enemy projectiles from outside the area.',va:'"Kekkai Sanctuary!"',ve:'"[Confirm in-game]"'},
 {k:'Passive',n:'Remedy Aura',d:"Mizuki passively heals all nearby allies continuously, scaling in strength as he deals damage or heals with other abilities."},
 ],
@@ -1076,13 +1104,13 @@ pk:[
 st:"Binding Chain is uniquely powerful against mobile heroes — it grounds aerial targets like Pharah and Jetpack Cat and hinders flankers like Tracer and Genji, neutralizing the mobility that defines those heroes. Kekkai Sanctuary absorbs entire projectile ultimates like Dragonstrike and RIP-Tire, providing a safe zone that forces enemies to reposition. Remedy Aura rewards aggressive play, healing more the more actively Mizuki fights.",
 ct:{tank:"Orisa and Sigma can poke him from range before Remedy Aura becomes relevant. Reinhardt's charge covers the distance to him quickly.",dps:"Widowmaker and Ashe contest him at range before he can close distance for Remedy Aura effect. Sombra hack removes Binding Chain and Katashiro Return.",sup:"Ana's Sleep Dart stops him in the open. Kiriko's Swift Step lets her escape Binding Chain by teleporting to an ally outside its range."}},
 
-{r:'sup',sr:'Survivor',n:'Moira',sl:'moira',nat:'Ireland',fl:'ie',
+{r:'sup',sr:'Medic',n:'Moira',sl:'moira',nat:'Ireland',fl:'ie',
 ov:"A self-sufficient support who deals burst damage and heals simultaneously with Biotic Orbs, escapes with Fade invulnerability, and pierces through entire teams with Coalescence.",
 ab:[
 {k:'LMB',n:'Biotic Grasp (Heal)',d:'Hold to drain life force and use it to heal nearby allies with a short-range beam.'},
 {k:'RMB',n:'Biotic Grasp (Damage)',d:'Hold to drain life force directly from a targeted enemy, dealing damage and healing Moira.'},
-{k:'Shift',n:'Fade',d:'Become invisible and invulnerable for a short duration, teleporting a short distance.'},
-{k:'E',n:'Biotic Orb',d:'Launch a bouncing orb that heals allies or damages enemies it contacts for a duration. Both types can be active simultaneously.'},
+{k:'Shift',n:'Fade',d:'Become invisible and invulnerable for a short duration, teleporting a short distance.',st:{cd:'6s'}},
+{k:'E',n:'Biotic Orb',d:'Launch a bouncing orb that heals allies or damages enemies it contacts for a duration. Both types can be active simultaneously.',st:{cd:'10s'}},
 {k:'Q',n:'Coalescence',u:1,d:'Emit a long-range beam that heals allies and damages enemies simultaneously, passing through barriers and all targets.',va:'"Surrender to my will!"',ve:'"Géill do mo thoil!" (Irish)'},
 {k:'Passive',n:'Symbiosis',d:'Dealing damage with Biotic Grasp regenerates the healing resource required for her healing beam.'},
 ],
@@ -1095,13 +1123,13 @@ pk:[
 st:"Biotic Orbs provide healing or damage that operates independently, bouncing around corners and through terrain without requiring line-of-sight. Coalescence passes through all barriers — it cannot be blocked by Reinhardt's shield, Sigma's barrier, or any other cover. Fade's invulnerability can escape any burst combo, sleep dart, or hook that would otherwise eliminate her.",
 ct:{tank:"Orisa and Reinhardt can close distance against her short-range kit. Doomfist and Winston can leap through her orbs and engage before Fade is available.",dps:"Reaper out-duels her at close range where her beam peaks. Sombra hack removes Fade entirely — her only escape. Pharah and Ashe contest her from long range.",sup:"Ana's Biotic Grenade prevents her from using her healing beam effectively during anti-heal. Kiriko's Suzu cleanses the damage-over-time from her orbs."}},
 
-{r:'sup',sr:'Tactician',n:'Wuyang',sl:'wuyang',nat:'China',fl:'cn',isNew:1,season:'S18 · Aug 2025',
+{r:'sup',sr:'Survivor',n:'Wuyang',sl:'wuyang',nat:'China',fl:'cn',season:'S18 · Aug 2025',
 ov:"A water-themed support whose steerable healing orbs can heal allies or knock back enemies, Tidal Blast shields and explodes, and Guardian Wave pushes enemies back while boosting ally healing.",
 ab:[
 {k:'LMB',n:'Water Orb',d:'Fire a steerable orb that heals allies on contact or knocks back and damages enemies.'},
-{k:'Shift',n:'Restorative Stream',d:'Place a passive healing aura on a targeted ally for several seconds.'},
-{k:'E',n:'Tidal Blast',d:'Shield a targeted ally; the shield then detonates, knocking down nearby enemies and massively healing the target.'},
-{k:'RMB',n:'Rushing Torrent',d:'Burst of water that propels Wuyang forward for repositioning or escape.'},
+{k:'Shift',n:'Restorative Stream',d:'Place a passive healing aura on a targeted ally for several seconds.',st:{cd:'12s'}},
+{k:'E',n:'Tidal Blast',d:'Shield a targeted ally; the shield then detonates, knocking down nearby enemies and massively healing the target.',st:{cd:'8s'}},
+{k:'RMB',n:'Rushing Torrent',d:'Burst of water that propels Wuyang forward for repositioning or escape.',st:{cd:'10s'}},
 {k:'Q',n:'Guardian Wave',u:1,d:'Release a tidal wave that pushes enemies back and boosts the healing received by all allies.',va:'"Reverse the tide!"',ve:'"Reverse the tide!" / "[Confirm enemy-heard variant in-game]"'},
 {k:'Passive',n:'Tactician',d:'Store excess ultimate charge beyond 100%.'},
 ],
@@ -1114,13 +1142,13 @@ pk:[
 st:"Guardian Wave's healing boost combined with a high-healing support composition creates a recovery window that can pull the team back from the edge of a lost fight. Tidal Blast's knockdown disrupts enemy flankers who reach his backline, providing meaningful self-defense. Water Orb's steerability allows him to heal allies behind cover without line-of-sight.",
 ct:{tank:"Dive tanks (Genji, Venture, D.Va, Winston) push through his kit before he can reposition. Reinhardt's range neutralizes his close-range need.",dps:"Widowmaker and Ashe contest him efficiently from long range. Sombra hack removes Rushing Torrent — his primary escape.",sup:"Ana's Biotic Grenade prevents his orb healing from affecting anti-healed allies. Kiriko's Suzu can push allies out of Tidal Blast's detonation range."}},
 
-{r:'sup',sr:'Medic',n:'Zenyatta',sl:'zenyatta',nat:'Nepal',fl:'np',
+{r:'sup',sr:'Tactician',n:'Zenyatta',sl:'zenyatta',pickrate:'high',nat:'Nepal',fl:'np',
 ov:"A high-damage, high-risk support who dramatically increases all damage received by a target with Discord Orb, and provides near-invulnerable team-wide healing with Transcendence.",
 ab:[
 {k:'LMB',n:'Orb of Destruction (Volley)',d:'Charge and release up to 5 orbs simultaneously for high burst damage.'},
 {k:'RMB',n:'Orb of Destruction (Single)',d:'Fire a single precision orb for consistent damage at range.'},
-{k:'Shift',n:'Orb of Harmony',d:'Place a healing orb on an ally that heals them over time. Active as long as Zenyatta has line-of-sight.'},
-{k:'E',n:'Orb of Discord',d:'Place a debuff orb on an enemy that increases all damage they receive by a significant percentage.'},
+{k:'Shift',n:'Orb of Harmony',d:'Place a healing orb on an ally that heals them over time. Active as long as Zenyatta has line-of-sight.',st:{cd:'—'}},
+{k:'E',n:'Orb of Discord',d:'Place a debuff orb on an enemy that increases all damage they receive by a significant percentage.',st:{cd:'—'}},
 {k:'Q',n:'Transcendence',u:1,d:'Move extremely fast and become near-invulnerable while healing nearby allies at a very high rate.',va:'"Experience tranquility."',ve:'"Pass into the iris."'},
 {k:'Passive',n:'Snap Kick',d:"Zenyatta's melee deals significantly more damage than other heroes."},
 ],
@@ -1140,10 +1168,134 @@ ct:{tank:"Reinhardt and Orisa can pressure him at close range where his lack of 
 // ── COMBINE & RENDER ───────────────────────────────────────────────
 const ALL_HEROES = [...TANKS, ...DPS1, ...DPS2, ...SUPPORTS];
 const FLAG='https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/';
-const ICON='https://www.flank.gg/images/games/overwatch/hero-icons/';
-
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 let cc=0;
+const ICON='../assets/';
+const ICON_MAP={
+  'dva':'dva','domina':'domina','doomfist':'doomfist','hazard':'hazard',
+  'junker-queen':'junker_queen','mauga':'mauga','orisa':'orisa',
+  'ramattra':'ramattra','reinhardt':'reinhardt','roadhog':'roadhog',
+  'sigma':'sigma','winston':'winston','wrecking-ball':'wrecking_ball','zarya':'zarya',
+};
+function heroImg(sl){return ICON+(ICON_MAP[sl]||sl.replace(/-/g,'_'))+'.png';}
+
+// Subrole CSS class + tooltip text
+const SUBROLE_INFO={
+  'Initiator':{cls:'sr-initiator',tip:'Staying airborne lightly heals you (60 HP, triggers after 0.8s airborne, 5s cooldown).'},
+  'Bruiser':{cls:'sr-bruiser',tip:'Reduces critical damage received. Below 50% HP, gain bonus movement speed.'},
+  'Stalwart':{cls:'sr-stalwart',tip:'Reduces knockback and slow effects received by 40%.'},
+  'Flanker':{cls:'sr-flanker',tip:'Health packs restore more health (+75 bonus).'},
+  'Recon':{cls:'sr-recon',tip:'Damaging an enemy below 50% HP reveals them through walls for 3.5 seconds.'},
+  'Sharpshooter':{cls:'sr-sharpshooter',tip:'Critical hits reduce your movement ability cooldowns.'},
+  'Specialist':{cls:'sr-specialist',tip:'Eliminating an enemy briefly increases your reload speed by 50% for 3 seconds.'},
+  'Medic':{cls:'sr-medic',tip:'Healing allies with your weapon also heals you for 40% of the healing dealt.'},
+  'Survivor':{cls:'sr-survivor',tip:'Using a movement ability activates passive health regeneration.'},
+  'Tactician':{cls:'sr-tactician',tip:'You can gain excess ultimate charge which carries over after using your ultimate.'},
+};
+
+// Role passive tooltips
+const ROLE_TIP={
+  'tank':'Less ultimate charge given by damage/healing received. +150 HP in Role Queue.',
+  'dps':'Damaging an enemy temporarily reduces their healing received by 15% for 2 seconds.',
+  'sup':'Passive health regeneration begins sooner after taking damage.',
+};
+
+// HP breakdown per hero (5v5 base values, health/armor/shields)
+const HERO_HP={
+  'ana':{hp:200,armor:0,shield:0},
+  'anran':{hp:200,armor:0,shield:0},
+  'ashe':{hp:200,armor:0,shield:0},
+  'baptiste':{hp:250,armor:0,shield:0},
+  'bastion':{hp:300,armor:200,shield:0},
+  'brigitte':{hp:175,armor:50,shield:0},
+  'cassidy':{hp:200,armor:0,shield:0},
+  'domina':{hp:300,armor:0,shield:200},
+  'doomfist':{hp:450,armor:0,shield:0},
+  'dva':{hp:200,armor:450,shield:0},
+  'echo':{hp:200,armor:0,shield:0},
+  'emre':{hp:200,armor:0,shield:0},
+  'freja':{hp:175,armor:0,shield:0},
+  'genji':{hp:200,armor:0,shield:0},
+  'hanzo':{hp:200,armor:0,shield:0},
+  'hazard':{hp:300,armor:200,shield:0},
+  'illari':{hp:200,armor:0,shield:0},
+  'jetpack-cat':{hp:200,armor:0,shield:0},
+  'junker-queen':{hp:450,armor:0,shield:0},
+  'junkrat':{hp:200,armor:0,shield:0},
+  'juno':{hp:200,armor:0,shield:0},
+  'kiriko':{hp:200,armor:0,shield:0},
+  'lifeweaver':{hp:175,armor:0,shield:50},
+  'lucio':{hp:200,armor:0,shield:0},
+  'mauga':{hp:300,armor:250,shield:0},
+  'mei':{hp:250,armor:0,shield:0},
+  'mercy':{hp:225,armor:0,shield:0},
+  'mizuki':{hp:200,armor:0,shield:0},
+  'moira':{hp:200,armor:0,shield:0},
+  'orisa':{hp:275,armor:125,shield:0},
+  'pharah':{hp:200,armor:0,shield:0},
+  'ramattra':{hp:300,armor:150,shield:0},
+  'reaper':{hp:250,armor:0,shield:0},
+  'reinhardt':{hp:325,armor:300,shield:0},
+  'roadhog':{hp:600,armor:0,shield:0},
+  'sierra':{hp:200,armor:0,shield:0},
+  'sigma':{hp:300,armor:0,shield:100},
+  'sojourn':{hp:200,armor:0,shield:0},
+  'soldier-76':{hp:200,armor:0,shield:0},
+  'sombra':{hp:200,armor:0,shield:0},
+  'symmetra':{hp:200,armor:0,shield:0},
+  'torbjorn':{hp:200,armor:75,shield:0},
+  'tracer':{hp:150,armor:0,shield:0},
+  'vendetta':{hp:150,armor:75,shield:0},
+  'venture':{hp:250,armor:0,shield:0},
+  'widowmaker':{hp:175,armor:0,shield:0},
+  'winston':{hp:350,armor:200,shield:0},
+  'wrecking-ball':{hp:500,armor:100,shield:100},
+  'wuyang':{hp:200,armor:0,shield:0},
+  'zarya':{hp:325,armor:0,shield:150},
+  'zenyatta':{hp:150,armor:0,shield:50}
+};
+
+// Country code to emoji flag
+function flagEmoji(fl){
+  if(!fl) return '';
+  // handle sub-tags like gb-sct
+  const base=fl.split('-')[0].toUpperCase();
+  return base.split('').map(c=>String.fromCodePoint(0x1F1E6+c.charCodeAt(0)-65)).join('');
+}
+
+// Season 2 new heroes (April 14 2026)
+const SEASON2_NEW=new Set(['sierra']);
+
+function buildHpBar(sl){
+  const d=HERO_HP[sl];
+  if(!d) return '';
+  const total=d.hp+d.armor+d.shield;
+  const pHP=Math.round(d.hp/total*100);
+  const pAR=Math.round(d.armor/total*100);
+  const pSH=Math.round(d.shield/total*100);
+  const legend=[];
+  if(d.hp) legend.push(`<span class="hp-legend-item"><span class="hp-dot" style="background:#e05070"></span><span style="color:#c04060">${d.hp} Health</span></span>`);
+  if(d.armor) legend.push(`<span class="hp-legend-item"><span class="hp-dot" style="background:#f5a623"></span><span style="color:#c8902a">${d.armor} Armor</span></span>`);
+  if(d.shield) legend.push(`<span class="hp-legend-item"><span class="hp-dot" style="background:#5bc8f0"></span><span style="color:#4aaccc">${d.shield} Shields</span></span>`);
+  return`<div class="hp-bar-wrap">
+  <div class="hp-bar">
+    ${d.hp?`<div class="hp-seg-health" style="width:${pHP}%"></div>`:''}
+    ${d.armor?`<div class="hp-seg-armor" style="width:${pAR}%"></div>`:''}
+    ${d.shield?`<div class="hp-seg-shield" style="width:${pSH}%"></div>`:''}
+  </div>
+  <span class="hp-total">${total} Health</span>
+</div>
+<div class="hp-legend">${legend.join('')}</div>`;
+}
+
+function buildStatChips(st){
+  if(!st) return '';
+  const chips=[];
+  if(st.dmg) chips.push(`<span class="ability-stat as-dmg">⚔ ${st.dmg}</span>`);
+  if(st.heal) chips.push(`<span class="ability-stat as-heal">✚ ${st.heal}</span>`);
+  if(st.cd) chips.push(`<span class="ability-stat as-cd">⏱ ${st.cd}</span>`);
+  return chips.length?`<div class="ability-stats">${chips.join('')}</div>`:'';
+}
 
 function buildAbility(a){
   const isUlt=a.u?'is-ult':'';
@@ -1151,7 +1303,7 @@ function buildAbility(a){
     <div class="voice-line voice-ally"><span class="voice-label">Ally hears</span><span class="voice-text">${esc(a.va)}</span></div>
     <div class="voice-line voice-enemy"><span class="voice-label">Enemy hears</span><span class="voice-text">${esc(a.ve)}</span></div>
   </div>`:'';
-  return`<div class="ability-row ${isUlt}"><div class="ability-key">${esc(a.k)}</div><div><div class="ability-name">${esc(a.n)}</div><div class="ability-desc">${esc(a.d)}</div>${voices}</div></div>`;
+  return`<div class="ability-row ${isUlt}"><div class="ability-key">${esc(a.k)}</div><div><div class="ability-name">${esc(a.n)}</div><div class="ability-desc">${esc(a.d)}</div>${buildStatChips(a.st)}${voices}</div></div>`;
 }
 
 function buildPerk(p){
@@ -1163,10 +1315,22 @@ function buildCard(h){
   const id='c'+(++cc);
   const rb=h.r;
   const roleLabel=rb==='tank'?'Tank':rb==='dps'?'Damage':'Support';
-  const flagHtml=h.fl?`<img class="flag-img" src="${FLAG}${h.fl}.svg" alt="${esc(h.nat)}" title="${esc(h.nat)}" onerror="this.style.display='none'">`:'';
-  const newBadge=h.isNew?`<span class="new-badge">New</span>`:'';
+  const emoji=h.fl?`<span class="flag-emoji">${flagEmoji(h.fl)}</span>`:'';
+  const isNew=SEASON2_NEW.has(h.sl)||h.isNew2;
+  const newBadge=isNew?`<span class="new-badge">New</span>`:'';
+  const pickBadge=h.pickrate==='high'?`<span class="pick-high">↑ High Pick</span>`:h.pickrate==='low'?`<span class="pick-low">↓ Low Pick</span>`:'';
   const seasonHtml=h.season?`<span class="hero-season">${esc(h.season)}</span>`:'';
-  const imgSrc=`${ICON}${h.sl}.png`;
+  const imgSrc=heroImg(h.sl);
+
+  const srInfo=SUBROLE_INFO[h.sr]||{cls:'',tip:''};
+  const srCls=srInfo.cls;
+  const srTip=srInfo.tip;
+  const roleTip=ROLE_TIP[rb]||'';
+
+  // sort abilities: passives first, then rest
+  const passives=h.ab.filter(a=>a.k==='Passive');
+  const others=h.ab.filter(a=>a.k!=='Passive');
+  const sortedAb=[...passives,...others];
 
   return`<div class="hero-card" data-r="${rb}" data-n="${esc(h.n.toLowerCase())}" id="${id}">
 <div class="card-stripe stripe-${rb}"></div>
@@ -1174,12 +1338,13 @@ function buildCard(h){
   <img class="hero-portrait" src="${imgSrc}" alt="${esc(h.n)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
   <div class="hero-portrait-fallback fb-${rb}">${esc(h.n.substring(0,2).toUpperCase())}</div>
   <div class="hero-meta">
-    <div class="hero-name-row"><span class="hero-name">${esc(h.n)}</span>${newBadge}</div>
+    <div class="hero-name-row"><span class="hero-name">${esc(h.n)}</span>${newBadge}${pickBadge}</div>
     <div class="hero-sub-row">
-      <span class="role-badge rb-${rb}">${roleLabel}</span>
-      <span class="subrole-badge">${esc(h.sr)}</span>
-      ${flagHtml}<span class="hero-nat">${esc(h.nat)}</span>${seasonHtml}
+      <span class="role-badge rb-${rb} has-tooltip">${roleLabel}<span class="tooltip">${esc(roleTip)}</span></span>
+      <span class="subrole-badge ${srCls} has-tooltip">${esc(h.sr)}<span class="tooltip">${esc(srTip)}</span></span>
+      ${emoji}<span class="hero-nat">${esc(h.nat)}</span>${seasonHtml}
     </div>
+    ${buildHpBar(h.sl)}
   </div>
 </div>
 <div class="hero-overview">${esc(h.ov)}</div>
@@ -1188,7 +1353,7 @@ function buildCard(h){
   <button class="card-tab" onclick="switchTab('${id}','pk',this)">Perks</button>
   <button class="card-tab" onclick="switchTab('${id}','an',this)">Analysis</button>
 </div>
-<div class="card-panel active" id="${id}-ab"><div class="ability-list">${h.ab.map(buildAbility).join('')}</div></div>
+<div class="card-panel active" id="${id}-ab"><div class="ability-list">${sortedAb.map(buildAbility).join('')}</div></div>
 <div class="card-panel" id="${id}-pk"><div class="perks-grid">${h.pk.map(buildPerk).join('')}</div></div>
 <div class="card-panel" id="${id}-an">
   <div class="panel-label">Strengths</div>
