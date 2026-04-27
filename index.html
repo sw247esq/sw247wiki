@@ -26,6 +26,8 @@
   --ow-orange:#f99e1a;
   --ow-blue:#3b9ede;
   --coming-soon:#3a3a50;
+  --civ-gold:#c9a84c;
+  --civ-brown:#6b4c2a;
 }
 
 body{
@@ -216,6 +218,36 @@ body::after{
 .wiki-card:hover{
   background:var(--card-hover);
   transform:translateY(-3px);
+}
+
+.wiki-card--civ{
+  border-color:rgba(201,168,76,0.25);
+}
+
+.wiki-card--civ:hover{
+  border-color:rgba(201,168,76,0.55);
+}
+
+.wiki-card--civ .card-accent-bar{
+  background:linear-gradient(90deg, var(--civ-gold), var(--civ-brown));
+}
+
+.card-game-tag--civ{
+  border-color:rgba(201,168,76,0.25);
+  color:var(--civ-gold);
+  background:rgba(201,168,76,0.08);
+}
+
+.wiki-card--civ:hover .card-cta{
+  color:var(--civ-gold);
+}
+
+.wiki-card--civ:hover .card-arrow svg{
+  stroke:var(--civ-gold);
+}
+
+.wiki-card--civ:hover{
+  box-shadow:0 0 0 1px rgba(201,168,76,0.3), 0 20px 60px rgba(0,0,0,0.5), 0 0 80px rgba(201,168,76,0.05);
 }
 
 .wiki-card--ow{
@@ -551,7 +583,7 @@ footer{
     <div class="wiki-grid">
 
       <!-- OVERWATCH — LIVE -->
-      <a class="wiki-card wiki-card--ow reveal" href="overwatch/index.html">
+      <a class="wiki-card wiki-card--ow reveal" href="overwatch_hero_guide_full.html">
         <div class="card-accent-bar"></div>
         <div class="card-inner">
           <div class="card-game-tag card-game-tag--ow">
@@ -569,13 +601,24 @@ footer{
         </div>
       </a>
 
-      <!-- COMING SOON SLOTS -->
-      <div class="wiki-card wiki-card--soon reveal">
+      <!-- CIV 7 -->
+      <a class="wiki-card wiki-card--civ reveal" href="civ7_wiki.html">
         <div class="card-accent-bar"></div>
         <div class="card-inner">
-          <div class="card-description">The next game guide is in progress.</div>
+          <div class="card-game-tag card-game-tag--civ">
+            <span class="tag-dot"></span>
+            In Progress · Started April 2026
+          </div>
+          <div class="card-title">Civilization VII<br>Wiki</div>
+          <div class="card-description">Civilizations, leaders, units, buildings, wonders, and more — structured reference for all three ages.</div>
         </div>
-      </div>
+        <div class="card-footer">
+          <span class="card-cta">Open wiki →</span>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </div>
+      </a>
 
       <div class="wiki-card wiki-card--soon reveal">
         <div class="card-accent-bar"></div>
