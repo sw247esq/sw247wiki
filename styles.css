@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #1c2b2e;
+  --bg: #e9e4d6;
+  --surface: #f6f3ea;
+  --accent: #9c6b2e;
+  --accent-deep: #6e4a1d;
+  --border: rgba(28, 43, 46, 0.14);
+  --border-strong: rgba(28, 43, 46, 0.26);
+  --muted: #5c6663;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 6rem;
+}
+
+a { color: var(--accent-deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+}
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-strong);
+  margin-bottom: 2.5rem;
+}
+
+.site-header .mark {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.site-header nav a {
+  font-size: 14px;
+  color: var(--muted);
+  margin-left: 1.25rem;
+}
+.site-header nav a:hover { color: var(--ink); }
+
+.crumb {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+.crumb a { color: var(--muted); }
+
+/* ---- Hub page ---- */
+
+.hero h1 {
+  font-size: 40px;
+  line-height: 1.15;
+  max-width: 14ch;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 52ch;
+  margin: 1rem 0 0;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 3rem;
+}
+
+.category-tile {
+  background: var(--surface);
+  padding: 1.5rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: background 0.15s ease;
+}
+
+.category-tile.active { cursor: pointer; }
+.category-tile.active:hover { background: #fbf9f2; }
+.category-tile.active h3 { color: var(--ink); }
+.category-tile.active .count { color: var(--accent-deep); }
+
+.category-tile.pending h3 { color: var(--muted); }
+.category-tile.pending .count { color: var(--muted); }
+
+.category-tile h3 {
+  font-size: 18px;
+}
+
+.category-tile .count {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.category-tile .desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ---- Civilizations index ---- */
+
+.age-group {
+  margin-top: 2.5rem;
+}
+
+.age-group h2 {
+  font-size: 20px;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.age-group .age-note {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+  margin-left: 0.5rem;
+}
+
+.civ-list {
+  margin-top: 0.25rem;
+}
+
+.civ-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.civ-row .name {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+a.civ-row .name { color: var(--ink); }
+a.civ-row:hover { text-decoration: none; }
+a.civ-row:hover .name { color: var(--accent-deep); text-decoration: underline; }
+
+.civ-row.pending .name { color: var(--muted); }
+
+.civ-row .tags {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.civ-row .status {
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-left: 1.5rem;
+}
+
+.civ-row.done .status { color: var(--accent-deep); }
+.civ-row.pending .status { color: var(--muted); }
+
+/* ---- Civ page ---- */
+
+.civ-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.civ-header h1 { font-size: 36px; }
+
+.civ-meta {
+  margin-top: 0.4rem;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.civ-meta strong { color: var(--ink); font-weight: 500; }
+
+.bias-block {
+  text-align: right;
+  font-size: 13px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.bias-block .label { display: block; margin-bottom: 0.2rem; }
+.bias-block strong { color: var(--ink); font-weight: 500; }
+
+section.block {
+  margin-top: 2.75rem;
+}
+
+section.block h2 {
+  font-size: 22px;
+  margin-bottom: 1.1rem;
+}
+
+section.block h2 .sub {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--muted);
+  margin-left: 0.5rem;
+}
+
+.era-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.25rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--border);
+}
+.era-row:last-child { border-bottom: 1px solid var(--border); }
+
+.era-row .era-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  padding-top: 0.15rem;
+}
+
+.era-row ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.era-row li { margin-bottom: 0.3rem; }
+.era-row li:last-child { margin-bottom: 0; }
+
+.delta {
+  color: var(--accent-deep);
+  font-weight: 500;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.item-card {
+  background: var(--surface);
+  padding: 1.1rem 1.25rem;
+}
+
+.item-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.item-card h3 .replaces {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.item-card .stats {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0.4rem 0 0;
+}
+
+.item-card .note {
+  font-size: 13px;
+  color: var(--ink);
+  margin: 0.4rem 0 0;
+}
+
+.tradition-track {
+  border-top: 1px solid var(--border);
+}
+
+.tradition-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.25rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tradition-row .age-tag {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.tradition-row .trad-name {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.tradition-row .trad-name.unique {
+  color: var(--accent-deep);
+}
+
+.tradition-row p {
+  margin: 0.15rem 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.provenance {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.provenance summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.provenance table {
+  margin-top: 0.75rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+.provenance td {
+  padding: 0.35rem 0.75rem 0.35rem 0;
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+}
+.provenance td:first-child { color: var(--ink); white-space: nowrap; }

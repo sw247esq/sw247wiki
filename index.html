@@ -3,650 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SW247 Wiki — Game Guides Hub</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --bg:#09090c;
-  --surface:#111116;
-  --card:#15151c;
-  --card-hover:#1a1a24;
-  --border:#222230;
-  --border2:#2e2e40;
-  --text:#e2e2ec;
-  --muted:#888899;
-  --faint:#444455;
-  --accent:#d4a853;
-  --accent2:#a87cd0;
-
-  /* game colors */
-  --ow-orange:#f99e1a;
-  --ow-blue:#3b9ede;
-  --coming-soon:#3a3a50;
-  --civ-gold:#c9a84c;
-  --civ-brown:#6b4c2a;
-}
-
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  min-height:100vh;
-  overflow-x:hidden;
-}
-
-/* ── BACKGROUND TEXTURE ── */
-body::before{
-  content:'';
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(ellipse 80% 60% at 15% 0%, rgba(168,124,208,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 85% 100%, rgba(212,168,83,0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(59,158,222,0.03) 0%, transparent 70%);
-  pointer-events:none;
-  z-index:0;
-}
-
-/* ── GRID LINES ── */
-body::after{
-  content:'';
-  position:fixed;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-  background-size:80px 80px;
-  pointer-events:none;
-  z-index:0;
-}
-
-/* ── LAYOUT ── */
-.wrap{
-  position:relative;
-  z-index:1;
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 32px;
-}
-
-/* ── HEADER ── */
-.site-header{
-  border-bottom:1px solid var(--border);
-  padding:28px 0 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  flex-wrap:wrap;
-}
-
-.logo{
-  display:flex;
-  align-items:baseline;
-  gap:10px;
-}
-
-.logo-mark{
-  font-family:'Inter',sans-serif;
-  font-size:26px;
-  font-weight:800;
-  letter-spacing:-0.5px;
-  color:#fff;
-  line-height:1;
-}
-
-.logo-mark span{
-  color:var(--accent);
-}
-
-.logo-divider{
-  width:1px;
-  height:22px;
-  background:var(--border2);
-  align-self:center;
-}
-
-.logo-subtitle{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  font-weight:400;
-  color:var(--muted);
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-}
-
-.header-meta{
-  display:flex;
-  align-items:center;
-  gap:20px;
-}
-
-.wiki-count{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  color:var(--faint);
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-
-/* ── HERO SECTION ── */
-.hero{
-  padding:72px 0 56px;
-  position:relative;
-}
-
-.hero-eyebrow{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:var(--accent);
-  margin-bottom:20px;
-}
-
-.hero-heading{
-  font-family:'Inter',sans-serif;
-  font-size:clamp(32px, 4.5vw, 52px);
-  font-weight:800;
-  line-height:1.05;
-  letter-spacing:-1px;
-  color:#fff;
-  margin-bottom:24px;
-}
-
-.hero-heading em{
-  font-style:normal;
-  color:var(--muted);
-}
-
-.hero-body{
-  font-size:16px;
-  color:var(--muted);
-  max-width:520px;
-  line-height:1.7;
-  font-weight:300;
-}
-
-/* ── SECTION LABEL ── */
-.section-label{
-  font-family:'DM Mono',monospace;
-  font-size:10px;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-  color:var(--faint);
-  margin-bottom:20px;
-  padding-bottom:12px;
-  border-bottom:1px solid var(--border);
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.section-label::after{
-  content:'';
-  flex:1;
-}
-
-/* ── WIKI GRID ── */
-.wikis-section{
-  padding-bottom:32px;
-}
-
-.wiki-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
-  gap:16px;
-}
-
-/* ── WIKI CARD (active) ── */
-.wiki-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  overflow:hidden;
-  text-decoration:none;
-  display:block;
-  transition:border-color 0.2s, transform 0.2s, background 0.2s;
-  position:relative;
-  cursor:pointer;
-}
-
-.wiki-card:hover{
-  background:var(--card-hover);
-  transform:translateY(-3px);
-}
-
-.wiki-card--civ{
-  border-color:rgba(201,168,76,0.25);
-}
-
-.wiki-card--civ:hover{
-  border-color:rgba(201,168,76,0.55);
-}
-
-.wiki-card--civ .card-accent-bar{
-  background:linear-gradient(90deg, var(--civ-gold), var(--civ-brown));
-}
-
-.card-game-tag--civ{
-  border-color:rgba(201,168,76,0.25);
-  color:var(--civ-gold);
-  background:rgba(201,168,76,0.08);
-}
-
-.wiki-card--civ:hover .card-cta{
-  color:var(--civ-gold);
-}
-
-.wiki-card--civ:hover .card-arrow svg{
-  stroke:var(--civ-gold);
-}
-
-.wiki-card--civ:hover{
-  box-shadow:0 0 0 1px rgba(201,168,76,0.3), 0 20px 60px rgba(0,0,0,0.5), 0 0 80px rgba(201,168,76,0.05);
-}
-
-.wiki-card--ow{
-  border-color:rgba(249,158,26,0.25);
-}
-
-.wiki-card--ow:hover{
-  border-color:rgba(249,158,26,0.55);
-}
-
-.wiki-card--ow .card-accent-bar{
-  background:linear-gradient(90deg, var(--ow-orange), var(--ow-blue));
-}
-
-.card-accent-bar{
-  height:3px;
-  width:100%;
-}
-
-.card-inner{
-  padding:22px 24px 20px;
-}
-
-.card-game-tag{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  font-family:'DM Mono',monospace;
-  font-size:10px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  padding:4px 10px;
-  border-radius:4px;
-  border:1px solid;
-  margin-bottom:16px;
-}
-
-.card-game-tag--ow{
-  color:var(--ow-orange);
-  border-color:rgba(249,158,26,0.3);
-  background:rgba(249,158,26,0.08);
-}
-
-.tag-dot{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:currentColor;
-  animation:pulse 2.2s ease-in-out infinite;
-}
-
-@keyframes pulse{
-  0%,100%{opacity:1;transform:scale(1)}
-  50%{opacity:0.5;transform:scale(0.75)}
-}
-
-.card-title{
-  font-family:'Inter',sans-serif;
-  font-size:22px;
-  font-weight:700;
-  color:#fff;
-  line-height:1.15;
-  letter-spacing:-0.3px;
-  margin-bottom:8px;
-}
-
-.card-description{
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.6;
-  font-weight:300;
-  margin-bottom:20px;
-}
-
-.card-stats{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.card-stat{
-  display:flex;
-  flex-direction:column;
-  gap:2px;
-}
-
-.card-stat-value{
-  font-family:'Inter',sans-serif;
-  font-size:20px;
-  font-weight:700;
-  color:#fff;
-  line-height:1;
-}
-
-.card-stat-label{
-  font-family:'DM Mono',monospace;
-  font-size:10px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  color:var(--faint);
-}
-
-.card-footer{
-  border-top:1px solid var(--border);
-  padding:14px 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.card-cta{
-  font-family:'Inter',sans-serif;
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:0.3px;
-}
-
-.wiki-card--ow .card-cta{
-  color:var(--ow-orange);
-}
-
-.card-arrow{
-  width:28px;
-  height:28px;
-  border-radius:50%;
-  border:1px solid var(--border2);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  transition:border-color 0.2s, transform 0.2s;
-}
-
-.wiki-card:hover .card-arrow{
-  transform:translate(2px, -2px);
-}
-
-.wiki-card--ow:hover .card-arrow{
-  border-color:rgba(249,158,26,0.4);
-}
-
-.card-arrow svg{
-  width:12px;
-  height:12px;
-  stroke:var(--muted);
-  fill:none;
-  stroke-width:2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-/* ── COMING SOON CARDS ── */
-.wiki-card--soon{
-  background:rgba(21,21,28,0.5);
-  border-color:var(--border);
-  cursor:default;
-  pointer-events:none;
-}
-
-.wiki-card--soon:hover{
-  transform:none;
-  background:rgba(21,21,28,0.5);
-}
-
-.wiki-card--soon .card-accent-bar{
-  background:var(--coming-soon);
-}
-
-.soon-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  font-family:'DM Mono',monospace;
-  font-size:10px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  padding:4px 10px;
-  border-radius:4px;
-  border:1px solid var(--border2);
-  color:var(--faint);
-  background:transparent;
-  margin-bottom:16px;
-}
-
-.wiki-card--soon .card-title{
-  color:var(--muted);
-}
-
-.wiki-card--soon .card-stat-value{
-  color:var(--faint);
-}
-
-.wiki-card--soon .card-cta{
-  color:var(--faint);
-}
-
-/* ── ABOUT SECTION ── */
-.about-section{
-  padding:12px 0 64px;
-}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  gap:16px;
-}
-
-@media(max-width:680px){
-  .about-grid{grid-template-columns:1fr}
-}
-
-.about-block{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:20px 22px;
-}
-
-.about-icon{
-  width:36px;
-  height:36px;
-  border-radius:8px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:14px;
-}
-
-.about-icon svg{
-  width:18px;
-  height:18px;
-  stroke:currentColor;
-  fill:none;
-  stroke-width:1.5;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-.about-icon--gold{background:rgba(212,168,83,0.12);color:var(--accent)}
-.about-icon--purple{background:rgba(168,124,208,0.12);color:var(--accent2)}
-.about-icon--blue{background:rgba(59,158,222,0.12);color:var(--ow-blue)}
-
-.about-title{
-  font-family:'Inter',sans-serif;
-  font-size:15px;
-  font-weight:600;
-  color:#fff;
-  margin-bottom:6px;
-}
-
-.about-body{
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.65;
-  font-weight:300;
-}
-
-/* ── FOOTER ── */
-footer{
-  border-top:1px solid var(--border);
-  padding:24px 0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:12px;
-}
-
-.footer-brand{
-  font-family:'Inter',sans-serif;
-  font-size:14px;
-  font-weight:700;
-  color:var(--faint);
-  letter-spacing:-0.2px;
-}
-
-.footer-brand span{color:var(--accent)}
-
-.footer-note{
-  font-family:'DM Mono',monospace;
-  font-size:10px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  color:var(--faint);
-}
-
-/* ── SCROLL REVEAL ── */
-.reveal{
-  opacity:0;
-  transform:translateY(20px);
-  transition:opacity 0.5s ease, transform 0.5s ease;
-}
-
-.reveal.visible{
-  opacity:1;
-  transform:none;
-}
-
-/* stagger delays */
-.reveal:nth-child(1){transition-delay:0s}
-.reveal:nth-child(2){transition-delay:0.07s}
-.reveal:nth-child(3){transition-delay:0.14s}
-.reveal:nth-child(4){transition-delay:0.21s}
-.reveal:nth-child(5){transition-delay:0.28s}
-.reveal:nth-child(6){transition-delay:0.35s}
-
-</style>
+<title>Civilizations — Civ 7 Compendium</title>
+<link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-
 <div class="wrap">
 
-  <!-- HEADER -->
   <header class="site-header">
-    <div class="logo">
-      <div class="logo-mark">SW<span>247</span></div>
-      <div class="logo-divider"></div>
-      <div class="logo-subtitle">Wiki</div>
-    </div>
-    <div class="header-meta">
-      <div class="wiki-count">1 wiki live · more coming</div>
-    </div>
+    <div class="mark">Civ 7 Compendium</div>
+    <nav>
+      <a href="../index.html">Hub</a>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1 class="hero-heading">Game References</h1>
-  </section>
+  <p class="crumb"><a href="../index.html">Hub</a> / Civilizations</p>
 
-  <!-- WIKIS -->
-  <section class="wikis-section">
-    <div class="section-label">Available Wikis</div>
+  <div class="hero">
+    <h1>Civilizations</h1>
+    <p>47 civilizations across three ages. Only Aksum is fully verified against the game's own files so far — everything else below is a placeholder carried over from earlier research and still needs the same treatment.</p>
+  </div>
 
-    <div class="wiki-grid">
-
-      <!-- OVERWATCH — LIVE -->
-      <a class="wiki-card wiki-card--ow reveal" href="overwatch/index.html">
-        <div class="card-accent-bar"></div>
-        <div class="card-inner">
-          <div class="card-game-tag card-game-tag--ow">
-            <span class="tag-dot"></span>
-            Live · Updated April 2026
-          </div>
-          <div class="card-title">Overwatch<br>Hero Guide</div>
-          <div class="card-description">Complete reference for all 50 heroes. Abilities, voice lines, perks, strengths, and role-by-role counters — everything in one place.</div>
-        </div>
-        <div class="card-footer">
-          <span class="card-cta">Open wiki →</span>
-          <div class="card-arrow">
-            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </div>
-        </div>
+  <div class="age-group">
+    <h2>Antiquity <span class="age-note">15 civilizations</span></h2>
+    <div class="civ-list">
+      <a class="civ-row done" href="aksum.html">
+        <span class="name">Aksum</span>
+        <span class="tags">Cultural, Economic</span>
+        <span class="status">Documented</span>
       </a>
-
-      <!-- CIV 7 -->
-      <a class="wiki-card wiki-card--civ reveal" href="civ7_wiki.html">
-        <div class="card-accent-bar"></div>
-        <div class="card-inner">
-          <div class="card-game-tag card-game-tag--civ">
-            <span class="tag-dot"></span>
-            In Progress · Started April 2026
-          </div>
-          <div class="card-title">Civilization VII<br>Wiki</div>
-          <div class="card-description">Civilizations, leaders, units, buildings, wonders, and more — structured reference for all three ages.</div>
-        </div>
-        <div class="card-footer">
-          <span class="card-cta">Open wiki →</span>
-          <div class="card-arrow">
-            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </div>
-        </div>
-      </a>
-
-      <div class="wiki-card wiki-card--soon reveal">
-        <div class="card-accent-bar"></div>
-        <div class="card-inner">
-          <div class="card-description">The next game guide is in progress.</div>
-        </div>
-      </div>
-
+      <div class="civ-row pending"><span class="name">Achaemenid Persia</span><span class="tags">Economic, Militaristic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Assyria</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Carthage</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Egypt</span><span class="tags">Cultural, Economic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Greece</span><span class="tags">Cultural, Diplomatic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Han</span><span class="tags">Diplomatic, Scientific</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Heian Japan</span><span class="tags">Cultural, Diplomatic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Khmer</span><span class="tags">Expansionist, Scientific</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Maurya</span><span class="tags">Militaristic, Scientific</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Maya</span><span class="tags">Diplomatic, Scientific</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Mississippian</span><span class="tags">Economic, Expansionist</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Rome</span><span class="tags">Cultural, Militaristic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Silla</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Tonga</span><span class="tags"></span><span class="status">Not yet documented</span></div>
     </div>
-  </section>
+  </div>
 
+  <div class="age-group">
+    <h2>Exploration <span class="age-note">~15 civilizations confirmed, roster may run to 17</span></h2>
+    <div class="civ-list">
+      <div class="civ-row pending"><span class="name">Abbasid</span><span class="tags">Cultural, Scientific</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Bulgaria</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Chola</span><span class="tags">Diplomatic, Economic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Hawaii</span><span class="tags">Cultural, Expansionist</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Inca</span><span class="tags">Expansionist, Economic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Majapahit</span><span class="tags">Economic, Cultural</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Ming</span><span class="tags">Economic, Scientific</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Mongolia</span><span class="tags">Expansionist, Militaristic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Normans</span><span class="tags">Diplomatic, Militaristic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Pirates</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Sengoku Japan</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Shawnee</span><span class="tags">Economic, Diplomatic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Songhai</span><span class="tags">Economic, Militaristic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Spain</span><span class="tags">Militaristic, Expansionist</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Dai Viet</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+    </div>
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-brand">SW<span>247</span> Wiki</div>
-    <div class="footer-note">Personal game reference · April 2026</div>
-  </footer>
+  <div class="age-group">
+    <h2>Modern <span class="age-note">15 civilizations</span></h2>
+    <div class="civ-list">
+      <div class="civ-row pending"><span class="name">America</span><span class="tags">Economic, Expansionist</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Buganda</span><span class="tags">Cultural, Expansionist</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">France (Imperial)</span><span class="tags">Militaristic, Diplomatic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Great Britain</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Joseon</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Meiji Japan</span><span class="tags">Militaristic, Scientific</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Mexico</span><span class="tags">Cultural, Diplomatic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Mughal India</span><span class="tags">Economic, Expansionist</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Nepal</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Ottoman</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Prussia</span><span class="tags">Militaristic, Diplomatic</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Qajar Persia</span><span class="tags"></span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Qing</span><span class="tags">Economic, Expansionist</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Russia</span><span class="tags">Cultural, Scientific</span><span class="status">Not yet documented</span></div>
+      <div class="civ-row pending"><span class="name">Siam</span><span class="tags">Cultural, Diplomatic</span><span class="status">Not yet documented</span></div>
+    </div>
+  </div>
 
-</div><!-- /wrap -->
-
-<script>
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting) e.target.classList.add('visible');
-  });
-},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
-
+</div>
 </body>
 </html>
